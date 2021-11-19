@@ -13,6 +13,16 @@
 		CE5069C327478A96006457CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5069C227478A96006457CB /* Preview Assets.xcassets */; };
 		CE5069C527478A96006457CB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069C427478A96006457CB /* Persistence.swift */; };
 		CE5069C827478A96006457CB /* Emotion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE5069C627478A96006457CB /* Emotion.xcdatamodeld */; };
+		CE5069D827478B6D006457CB /* EmotionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069D427478B6C006457CB /* EmotionCoordinator.swift */; };
+		CE5069D927478B6D006457CB /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069D527478B6C006457CB /* EmotionView.swift */; };
+		CE5069DB27478B6D006457CB /* EmotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069D727478B6D006457CB /* EmotionModel.swift */; };
+		CE5069E127478EA1006457CB /* NavigationControllerSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069DF27478EA1006457CB /* NavigationControllerSwiftUI.swift */; };
+		CE5069E227478EA1006457CB /* NavigationControllerGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069E027478EA1006457CB /* NavigationControllerGeneric.swift */; };
+		CE5069E727478ED7006457CB /* NavigatorSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069E427478ED6006457CB /* NavigatorSwiftUI.swift */; };
+		CE5069E827478ED7006457CB /* CoordinatorSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069E527478ED6006457CB /* CoordinatorSwiftUI.swift */; };
+		CE5069E927478ED7006457CB /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069E627478ED7006457CB /* Bindable.swift */; };
+		CE5069EB27478F1D006457CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069EA27478F1D006457CB /* MainView.swift */; };
+		CE5069ED27478F27006457CB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069EC27478F27006457CB /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +33,16 @@
 		CE5069C227478A96006457CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE5069C427478A96006457CB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		CE5069C727478A96006457CB /* Emotion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Emotion.xcdatamodel; sourceTree = "<group>"; };
+		CE5069D427478B6C006457CB /* EmotionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionCoordinator.swift; sourceTree = "<group>"; };
+		CE5069D527478B6C006457CB /* EmotionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
+		CE5069D727478B6D006457CB /* EmotionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionModel.swift; sourceTree = "<group>"; };
+		CE5069DF27478EA1006457CB /* NavigationControllerSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerSwiftUI.swift; sourceTree = "<group>"; };
+		CE5069E027478EA1006457CB /* NavigationControllerGeneric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerGeneric.swift; sourceTree = "<group>"; };
+		CE5069E427478ED6006457CB /* NavigatorSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorSwiftUI.swift; sourceTree = "<group>"; };
+		CE5069E527478ED6006457CB /* CoordinatorSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorSwiftUI.swift; sourceTree = "<group>"; };
+		CE5069E627478ED7006457CB /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		CE5069EA27478F1D006457CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CE5069EC27478F27006457CB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = Emotion/Screens/Main/SettingsView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +75,9 @@
 		CE5069BA27478A8D006457CB /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
+				CE5069CF27478ABD006457CB /* Screens */,
+				CE5069CE27478AB6006457CB /* Lib */,
 				CE5069BB27478A8D006457CB /* EmotionApp.swift */,
-				CE5069BD27478A8D006457CB /* ContentView.swift */,
 				CE5069BF27478A96006457CB /* Assets.xcassets */,
 				CE5069C427478A96006457CB /* Persistence.swift */,
 				CE5069C627478A96006457CB /* Emotion.xcdatamodeld */,
@@ -71,6 +92,71 @@
 				CE5069C227478A96006457CB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE5069CE27478AB6006457CB /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				CE5069EE27479A35006457CB /* Manager */,
+				CE5069E327478ECA006457CB /* Protocols */,
+				CE5069DE27478E92006457CB /* Navigation controllers */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		CE5069CF27478ABD006457CB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CE5069DD27478D04006457CB /* Settings */,
+				CE5069DC27478CFD006457CB /* Main */,
+				CE5069BD27478A8D006457CB /* ContentView.swift */,
+				CE5069D427478B6C006457CB /* EmotionCoordinator.swift */,
+				CE5069D727478B6D006457CB /* EmotionModel.swift */,
+				CE5069D527478B6C006457CB /* EmotionView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CE5069DC27478CFD006457CB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CE5069EA27478F1D006457CB /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CE5069DD27478D04006457CB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CE5069EC27478F27006457CB /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CE5069DE27478E92006457CB /* Navigation controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE5069E027478EA1006457CB /* NavigationControllerGeneric.swift */,
+				CE5069DF27478EA1006457CB /* NavigationControllerSwiftUI.swift */,
+			);
+			path = "Navigation controllers";
+			sourceTree = "<group>";
+		};
+		CE5069E327478ECA006457CB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CE5069E627478ED7006457CB /* Bindable.swift */,
+				CE5069E527478ED6006457CB /* CoordinatorSwiftUI.swift */,
+				CE5069E427478ED6006457CB /* NavigatorSwiftUI.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CE5069EE27479A35006457CB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +229,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5069ED27478F27006457CB /* SettingsView.swift in Sources */,
+				CE5069E927478ED7006457CB /* Bindable.swift in Sources */,
+				CE5069EB27478F1D006457CB /* MainView.swift in Sources */,
 				CE5069C527478A96006457CB /* Persistence.swift in Sources */,
 				CE5069BE27478A8D006457CB /* ContentView.swift in Sources */,
+				CE5069E827478ED7006457CB /* CoordinatorSwiftUI.swift in Sources */,
+				CE5069E727478ED7006457CB /* NavigatorSwiftUI.swift in Sources */,
 				CE5069BC27478A8D006457CB /* EmotionApp.swift in Sources */,
+				CE5069D927478B6D006457CB /* EmotionView.swift in Sources */,
 				CE5069C827478A96006457CB /* Emotion.xcdatamodeld in Sources */,
+				CE5069DB27478B6D006457CB /* EmotionModel.swift in Sources */,
+				CE5069D827478B6D006457CB /* EmotionCoordinator.swift in Sources */,
+				CE5069E127478EA1006457CB /* NavigationControllerSwiftUI.swift in Sources */,
+				CE5069E227478EA1006457CB /* NavigationControllerGeneric.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

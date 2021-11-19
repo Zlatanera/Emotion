@@ -13,8 +13,9 @@ struct EmotionApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            EmotionSwiftUIView()
+                .environmentObject(EmotionCoordinator(navigator: NavigationControllerSwiftUI()))
+                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
