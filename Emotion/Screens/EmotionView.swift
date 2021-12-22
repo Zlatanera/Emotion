@@ -9,10 +9,10 @@ struct EmotionView: View {
     var body: some View {
         if #available(iOS 14.0, *) {
             coordinator.currentScene
-                .ignoresSafeArea(.all, edges: .top)
+                .ignoresSafeArea(.all, edges: .bottom)
         } else {
             coordinator.currentScene
-                .edgesIgnoringSafeArea(.top)
+                .edgesIgnoringSafeArea(.bottom)
         }
     }
     

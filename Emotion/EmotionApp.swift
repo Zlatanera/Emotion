@@ -9,13 +9,11 @@ import SwiftUI
 
 @main
 struct EmotionApp: App {
-    let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
             EmotionView()
                 .environmentObject(EmotionCoordinator(navigator: NavigationControllerSwiftUI()))
-                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

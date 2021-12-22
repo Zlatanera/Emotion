@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495E527927620406003A5F12 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E527827620406003A5F12 /* DataManager.swift */; };
+		498A240F277307EA000ACD36 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A240E277307EA000ACD36 /* AddTaskViewModel.swift */; };
+		498A2411277307FC000ACD36 /* AddTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2410277307FC000ACD36 /* AddTaskModel.swift */; };
+		498A241427730D07000ACD36 /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */; };
+		498A241527730D07000ACD36 /* Notes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A241327730D07000ACD36 /* Notes+CoreDataProperties.swift */; };
+		49A940F0276B08A600BB4750 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A940EF276B08A600BB4750 /* OnBoardingView.swift */; };
+		49A940F2276B08B400BB4750 /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A940F1276B08B400BB4750 /* OnBoardingModel.swift */; };
+		49A940F4276B0AC700BB4750 /* OnBoardingCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A940F3276B0AC700BB4750 /* OnBoardingCardData.swift */; };
+		49A940F6276B0FC800BB4750 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A940F5276B0FC800BB4750 /* MenuView.swift */; };
+		49A940F8276B0FD300BB4750 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A940F7276B0FD300BB4750 /* StartView.swift */; };
 		CE5069BC27478A8D006457CB /* EmotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069BB27478A8D006457CB /* EmotionApp.swift */; };
-		CE5069BE27478A8D006457CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069BD27478A8D006457CB /* ContentView.swift */; };
 		CE5069C027478A96006457CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5069BF27478A96006457CB /* Assets.xcassets */; };
 		CE5069C327478A96006457CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5069C227478A96006457CB /* Preview Assets.xcassets */; };
 		CE5069C527478A96006457CB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069C427478A96006457CB /* Persistence.swift */; };
@@ -22,13 +31,22 @@
 		CE5069E827478ED7006457CB /* CoordinatorSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069E527478ED6006457CB /* CoordinatorSwiftUI.swift */; };
 		CE5069E927478ED7006457CB /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069E627478ED7006457CB /* Bindable.swift */; };
 		CE5069EB27478F1D006457CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069EA27478F1D006457CB /* MainView.swift */; };
-		CE5069ED27478F27006457CB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069EC27478F27006457CB /* SettingsView.swift */; };
+		CE5069ED27478F27006457CB /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069EC27478F27006457CB /* AddTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		495E527827620406003A5F12 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		498A240E277307EA000ACD36 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		498A2410277307FC000ACD36 /* AddTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskModel.swift; sourceTree = "<group>"; };
+		498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		498A241327730D07000ACD36 /* Notes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		49A940EF276B08A600BB4750 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		49A940F1276B08B400BB4750 /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
+		49A940F3276B0AC700BB4750 /* OnBoardingCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCardData.swift; sourceTree = "<group>"; };
+		49A940F5276B0FC800BB4750 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		49A940F7276B0FD300BB4750 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		CE5069B827478A8D006457CB /* Emotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5069BB27478A8D006457CB /* EmotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionApp.swift; sourceTree = "<group>"; };
-		CE5069BD27478A8D006457CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE5069BF27478A96006457CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5069C227478A96006457CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE5069C427478A96006457CB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -42,7 +60,7 @@
 		CE5069E527478ED6006457CB /* CoordinatorSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorSwiftUI.swift; sourceTree = "<group>"; };
 		CE5069E627478ED7006457CB /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		CE5069EA27478F1D006457CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		CE5069EC27478F27006457CB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = Emotion/Screens/Main/SettingsView.swift; sourceTree = SOURCE_ROOT; };
+		CE5069EC27478F27006457CB /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTaskView.swift; path = Emotion/Screens/Main/AddTaskView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49C57FCC27670FAE00988712 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */,
+				498A241327730D07000ACD36 /* Notes+CoreDataProperties.swift */,
+				CE5069C427478A96006457CB /* Persistence.swift */,
+				49A940F3276B0AC700BB4750 /* OnBoardingCardData.swift */,
+				CE5069C627478A96006457CB /* Emotion.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		49C57FCF276729C200988712 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				49A940F7276B0FD300BB4750 /* StartView.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		49C57FD0276729D600988712 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				49A940F5276B0FC800BB4750 /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		49C57FD1276729DC00988712 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				49A940EF276B08A600BB4750 /* OnBoardingView.swift */,
+				49A940F1276B08B400BB4750 /* OnBoardingModel.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 		CE5069AF27478A8D006457CB = {
 			isa = PBXGroup;
 			children = (
@@ -75,12 +130,10 @@
 		CE5069BA27478A8D006457CB /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
-				CE5069CF27478ABD006457CB /* Screens */,
 				CE5069CE27478AB6006457CB /* Lib */,
+				CE5069CF27478ABD006457CB /* Screens */,
 				CE5069BB27478A8D006457CB /* EmotionApp.swift */,
 				CE5069BF27478A96006457CB /* Assets.xcassets */,
-				CE5069C427478A96006457CB /* Persistence.swift */,
-				CE5069C627478A96006457CB /* Emotion.xcdatamodeld */,
 				CE5069C127478A96006457CB /* Preview Content */,
 			);
 			path = Emotion;
@@ -97,6 +150,7 @@
 		CE5069CE27478AB6006457CB /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				49C57FCC27670FAE00988712 /* Data */,
 				CE5069EE27479A35006457CB /* Manager */,
 				CE5069E327478ECA006457CB /* Protocols */,
 				CE5069DE27478E92006457CB /* Navigation controllers */,
@@ -107,9 +161,11 @@
 		CE5069CF27478ABD006457CB /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				CE5069DD27478D04006457CB /* Settings */,
+				49C57FCF276729C200988712 /* Start */,
+				49C57FD1276729DC00988712 /* OnBoarding */,
 				CE5069DC27478CFD006457CB /* Main */,
-				CE5069BD27478A8D006457CB /* ContentView.swift */,
+				49C57FD0276729D600988712 /* Menu */,
+				CE5069DD27478D04006457CB /* AddTask */,
 				CE5069D427478B6C006457CB /* EmotionCoordinator.swift */,
 				CE5069D727478B6D006457CB /* EmotionModel.swift */,
 				CE5069D527478B6C006457CB /* EmotionView.swift */,
@@ -125,12 +181,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		CE5069DD27478D04006457CB /* Settings */ = {
+		CE5069DD27478D04006457CB /* AddTask */ = {
 			isa = PBXGroup;
 			children = (
-				CE5069EC27478F27006457CB /* SettingsView.swift */,
+				CE5069EC27478F27006457CB /* AddTaskView.swift */,
+				498A240E277307EA000ACD36 /* AddTaskViewModel.swift */,
+				498A2410277307FC000ACD36 /* AddTaskModel.swift */,
 			);
-			path = Settings;
+			path = AddTask;
 			sourceTree = "<group>";
 		};
 		CE5069DE27478E92006457CB /* Navigation controllers */ = {
@@ -155,6 +213,7 @@
 		CE5069EE27479A35006457CB /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				495E527827620406003A5F12 /* DataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -229,18 +288,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE5069ED27478F27006457CB /* SettingsView.swift in Sources */,
+				CE5069ED27478F27006457CB /* AddTaskView.swift in Sources */,
+				495E527927620406003A5F12 /* DataManager.swift in Sources */,
+				498A241427730D07000ACD36 /* Notes+CoreDataClass.swift in Sources */,
 				CE5069E927478ED7006457CB /* Bindable.swift in Sources */,
 				CE5069EB27478F1D006457CB /* MainView.swift in Sources */,
+				49A940F4276B0AC700BB4750 /* OnBoardingCardData.swift in Sources */,
+				49A940F6276B0FC800BB4750 /* MenuView.swift in Sources */,
+				49A940F8276B0FD300BB4750 /* StartView.swift in Sources */,
 				CE5069C527478A96006457CB /* Persistence.swift in Sources */,
-				CE5069BE27478A8D006457CB /* ContentView.swift in Sources */,
 				CE5069E827478ED7006457CB /* CoordinatorSwiftUI.swift in Sources */,
+				498A240F277307EA000ACD36 /* AddTaskViewModel.swift in Sources */,
 				CE5069E727478ED7006457CB /* NavigatorSwiftUI.swift in Sources */,
+				498A2411277307FC000ACD36 /* AddTaskModel.swift in Sources */,
 				CE5069BC27478A8D006457CB /* EmotionApp.swift in Sources */,
+				49A940F0276B08A600BB4750 /* OnBoardingView.swift in Sources */,
 				CE5069D927478B6D006457CB /* EmotionView.swift in Sources */,
 				CE5069C827478A96006457CB /* Emotion.xcdatamodeld in Sources */,
 				CE5069DB27478B6D006457CB /* EmotionModel.swift in Sources */,
 				CE5069D827478B6D006457CB /* EmotionCoordinator.swift in Sources */,
+				49A940F2276B08B400BB4750 /* OnBoardingModel.swift in Sources */,
+				498A241527730D07000ACD36 /* Notes+CoreDataProperties.swift in Sources */,
 				CE5069E127478EA1006457CB /* NavigationControllerSwiftUI.swift in Sources */,
 				CE5069E227478EA1006457CB /* NavigationControllerGeneric.swift in Sources */,
 			);

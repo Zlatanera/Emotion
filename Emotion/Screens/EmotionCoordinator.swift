@@ -7,8 +7,11 @@ import SwiftUI
 class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     
     @Published var currentScene: AnyView = AnyView(EmptyView())
+    @Published var items: [Notes] = []
+    
     //Published для списка
     
+    internal var data: DataManager = DataManager.shared
     internal var cancellables: [AnyCancellable] = []
     internal var navScene = NavigationControllerGeneric<Emotion.Flow>()
     internal var navCoordinator: NavigatorSwiftUI
@@ -17,6 +20,7 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
         self.navCoordinator = navigator
         setupCoordinator()
         setupBindings()
+        setupItems()
         self.start()
     }
     
@@ -26,6 +30,12 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     
     func start() {
         showMain()
+    }
+    
+    func setupItems() {
+        data.getNotes { items in
+            self.items = items
+        }
     }
     
     func back() {
@@ -40,17 +50,31 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     private func showScene(for state: Emotion.Flow) {
         switch state {
         case .main: currentScene = AnyView(MainView().environmentObject(self))
-        case .settings: currentScene = AnyView(SettingsView().environmentObject(self))
+        case .addTask: currentScene = AnyView(AddTaskView().environmentObject(self))
+        case .onBoarding: currentScene = AnyView(OnBoardingView().environmentObject(self))
+        case .startScreen: currentScene = AnyView(StartView(endAnimation: true).environmentObject(self))
+        case .menu: currentScene = AnyView(MenuView(showMenu: .constant(false)).environmentObject(self))
         }
     }
     
     func showMain() {
         navScene.push(.main)
-            
     }
     
-    func showSettings() {
-        navScene.push(.settings)
+    func showAddTask() {
+        navScene.push(.addTask)
+    }
+    
+    func showOnBoarding() {
+        navScene.push(.onBoarding)
+    }
+    
+    func showStart() {
+        navScene.push(.startScreen)
+    }
+    
+    func showMenu() {
+        navScene.push(.menu)
     }
     
 }
@@ -68,5 +92,18 @@ extension EmotionCoordinator: Bindable {
 // MARK: Main scene data
 extension EmotionCoordinator {
     
+    func deleteItems() {
+        //data.deleteItems(offsets: IndexSet)
+    }
     
+    func saveTaskToDB(task: String, emotion: Emotion.Smile) {
+        data.addTask(for: AddTask.forDB(emotion: emotion, task: task), completion: {
+            guard let item = $0 else { return }
+            DispatchQueue.main.async {
+                self.items.append(item)
+            }
+        })
+    }
 }
+
+
