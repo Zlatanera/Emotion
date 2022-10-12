@@ -29,7 +29,7 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     }
     
     func start() {
-        showMain()
+        showStart()
     }
     
     func setupItems() {
@@ -71,6 +71,9 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     
     func showStart() {
         navScene.push(.startScreen)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.showOnBoarding()
+        }
     }
     
     func showMenu() {

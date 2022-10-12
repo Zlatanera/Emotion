@@ -14,7 +14,7 @@ struct StartView: View {
     
     var body: some View {
         ZStack {
-            Color(.white)
+            AppColors.white
             
             Image("StartScreen")
                 .resizable()
@@ -33,7 +33,7 @@ struct StartView: View {
                     .fontWeight(.semibold)
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
-            .foregroundColor(Color("mainColor").opacity(0.8))
+            .foregroundColor(AppColors.mainColor08)
             .padding(.bottom, 15)
             //.opacity(startAnimation ? 1 : 0)
             //.opacity(endAnimation ? 0 : 1)

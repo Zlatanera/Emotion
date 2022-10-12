@@ -11,6 +11,6 @@ import SwiftUI
 
 struct OnBoardingCard: Identifiable {
     var id = UUID()
-    var image: String
+    var image: AnyView
     var description: String
 }

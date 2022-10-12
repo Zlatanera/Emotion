@@ -9,13 +9,15 @@ import SwiftUI
 
 struct OnBoardingView: View {
     
+    @EnvironmentObject var coordinator: EmotionCoordinator
+    
     var cardOnBoarding: [OnBoardingCard] = onBoardingCardData
     
     var body: some View {
         TabView {
             ForEach(cardOnBoarding[0...2]) { item in
                 
-                OnBoardingCardView(card: item)
+                OnBoardingCardView(goToMain: { coordinator.showMain() }, card: item)
                 
             }
         }
@@ -36,6 +38,8 @@ struct OnBoardingView_Previews: PreviewProvider {
 
 struct OnBoardingCardView: View {
     
+    let goToMain: () -> Void
+    
     var card: OnBoardingCard
     
     @State private var isAnimating: Bool = false
@@ -46,10 +50,7 @@ struct OnBoardingCardView: View {
             VStack(spacing: 20) {
                 // EMOTION: Image
                 
-                Image(card.image)
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 8, x: 6, y: 8)
+                card.image
                     .scaleEffect(isAnimating ? 1.0 : 0.6)
                 
                 Text(card.description)
@@ -58,7 +59,7 @@ struct OnBoardingCardView: View {
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 2, x: 2, y: 2)
                     .multilineTextAlignment(.center)
                 
-                    StartButtonView()
+                StartButtonView(goToMain: goToMain)
             }
         }
         .onAppear {
@@ -76,7 +77,7 @@ struct OnBoardingCardView: View {
 
 struct EmotionCardView_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingCardView(card: onBoardingCardData[1])
+        OnBoardingCardView(goToMain: {}, card: onBoardingCardData[1])
             .previewLayout(.fixed(width: 320, height: 560))
     }
 }
@@ -85,11 +86,14 @@ struct EmotionCardView_Previews: PreviewProvider {
 
 struct StartButtonView: View {
     
-    @AppStorage("isOnboarding") var isOnboarding: Bool?
+    let goToMain: () -> Void
+    
+    //@AppStorage("isOnboarding") var isOnboarding: Bool?
     
     var body: some View {
         Button {
-            isOnboarding = false
+            goToMain()
+            //isOnboarding = false
         } label: {
             HStack(spacing: 8) {
                 Text("Start")
@@ -110,7 +114,7 @@ struct StartButtonView: View {
 
 struct StartButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        StartButtonView()
+        StartButtonView(goToMain: {})
             .previewLayout(.sizeThatFits)
     }
 }

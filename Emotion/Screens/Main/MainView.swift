@@ -20,9 +20,11 @@ struct MainView: View {
             List {
                 ForEach(coordinator.items, id: \.self.task) { item in
                     RowItem(item: item)
+                        .frame(height: 100)
                 }
             }
-            .lineSpacing(5)
+            .listStyle(InsetGroupedListStyle())
+            .frame(maxWidth: 640)
             
             .overlay(ZStack {
                 Button(action: coordinator.showAddTask) {
@@ -38,7 +40,6 @@ struct MainView: View {
                 .padding(.trailing, 15),
                      alignment: .bottomTrailing
             )
-            
         }
     }
 }
@@ -95,28 +96,32 @@ struct RowItem: View {
     let item: Notes
     
     var body: some View {
+        
         HStack {
-            Circle()
-                .background(.white)
-            
+
             Image(Emotion.Smile.getEmotionFor(id: Int(item.emotion)).image)
-                .cornerRadius(15)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
                 .foregroundColor(.white)
-                .frame(width: 40, height: 40)
+                .background(Color.white)
+                .clipShape(Circle())
+                .frame(width: 60, height: 60)
                 .padding(5)
-            
+
             Text(item.task ?? "Empty")
                 .font(.footnote)
                 .fontWeight(.light)
+                .foregroundColor(.white)
                 .multilineTextAlignment(.leading)
                 .lineLimit(4)
-                .padding(.trailing, 10)
-            
+                .padding(.leading, 2)
+
             HStack {
-                Divider()
-                    .foregroundColor(.white)
+                ExDivider()
             }
-            
+            .padding(.trailing, 3)
+
+
             VStack {
                 Text("13")
                     .font(.title)
@@ -127,12 +132,25 @@ struct RowItem: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
             }
-            .padding(5)
-           
+            .padding(.trailing, 5)
+
         }
         .background(Color("mainColor"))
         .cornerRadius(15)
-        .padding()
-        
+        .frame(maxWidth: 640)
+        .padding(10)
+
+    }
+}
+
+struct ExDivider: View {
+    let color: Color = .white
+    let width: CGFloat = 4
+    var body: some View {
+        Rectangle()
+            .fill(color)
+            .frame(height: width)
+            .rotationEffect(.degrees(90))
+            
     }
 }
