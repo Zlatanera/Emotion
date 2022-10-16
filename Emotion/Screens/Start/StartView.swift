@@ -35,8 +35,6 @@ struct StartView: View {
             .frame(maxHeight: .infinity, alignment: .bottom)
             .foregroundColor(AppColors.mainColor08)
             .padding(.bottom, 15)
-            //.opacity(startAnimation ? 1 : 0)
-            //.opacity(endAnimation ? 0 : 1)
             
         }//:ZSTACK
         .ignoresSafeArea()

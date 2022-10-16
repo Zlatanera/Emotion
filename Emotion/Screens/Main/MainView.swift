@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainView: View {
-    //@Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var notes: FetchedResults<Notes>
     
     @EnvironmentObject var coordinator: EmotionCoordinator
@@ -28,10 +27,10 @@ struct MainView: View {
             
             .overlay(ZStack {
                 Button(action: coordinator.showAddTask) {
-                    Image("AddTaskImage")
+                    Image("AddTaskImage") //"AddTaskImage"
                         .resizable()
                         .scaledToFit()
-                        .background(Circle().fill(Color("mainColor")))
+                        .background(Circle().fill(AppColors.mainColor))
                         .frame(width: 48, height: 48, alignment: .center)
                 }
                 PulseButton()
@@ -57,29 +56,29 @@ struct PulseButton: View {
     var body: some View {
         ZStack {
             Circle()
-                .strokeBorder(Color("mainColor"), lineWidth: 1)
-                .background(Circle().foregroundColor(Color("mainColor")))
+                .strokeBorder(AppColors.mainColor, lineWidth: 1)
+                .background(Circle().foregroundColor(AppColors.mainColor))
                 .opacity(0.25)
                 .frame(width: 80, height: 80)
                 .scaleEffect(self.animate ? 1 : 0)
             
             Circle()
-                .strokeBorder(Color("mainColor"), lineWidth: 1)
-                .background(Circle().foregroundColor(Color("mainColor")))
+                .strokeBorder(AppColors.mainColor, lineWidth: 1)
+                .background(Circle().foregroundColor(AppColors.mainColor))
                 .opacity(0.35)
                 .frame(width: 70, height: 70)
                 .scaleEffect(self.animate ? 1 : 0)
             
             Circle()
-                .strokeBorder(Color("mainColor"), lineWidth: 1)
-                .background(Circle().foregroundColor(Color("mainColor")))
+                .strokeBorder(AppColors.mainColor, lineWidth: 1)
+                .background(Circle().foregroundColor(AppColors.mainColor))
                 .opacity(0.45)
                 .frame(width: 60, height: 60)
                 .scaleEffect(self.animate ? 1 : 0)
             
             Circle()
-                .strokeBorder(Color("mainColor"), lineWidth: 1)
-                .background(Circle().foregroundColor(Color("mainColor")))
+                .strokeBorder(AppColors.mainColor, lineWidth: 1)
+                .background(Circle().foregroundColor(AppColors.mainColor))
                 .opacity(0.55)
                 .frame(width: 50, height: 50)
                 .scaleEffect(self.animate ? 1 : 0)
@@ -103,7 +102,7 @@ struct RowItem: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(.white)
-                .background(Color.white)
+                .background(AppColors.white)
                 .clipShape(Circle())
                 .frame(width: 60, height: 60)
                 .padding(5)
@@ -135,7 +134,7 @@ struct RowItem: View {
             .padding(.trailing, 5)
 
         }
-        .background(Color("mainColor"))
+        .background(AppColors.mainColor)
         .cornerRadius(15)
         .frame(maxWidth: 640)
         .padding(10)

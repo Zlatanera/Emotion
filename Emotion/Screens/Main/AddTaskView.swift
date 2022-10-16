@@ -20,7 +20,7 @@ struct AddTaskView: View {
             VStack(alignment: .center, spacing: 20) {
                 //MARK: HEADER
                 HStack {
-                    Image("AddTask")
+                    Image("AddTask") //
                         .resizable()
                         .frame(width: 20, height: 20)
                     
@@ -41,18 +41,18 @@ struct AddTaskView: View {
                 //MARK: INPUT TASK
                 TextField("Введите задачу", text: $nameTask)
                     .padding(20)
-                    .background(Color.white)
+                    .background(AppColors.white)
                     .cornerRadius(15)
                     .font(.system(size: 24, weight: .bold, design: .default))
                     .shadow(color: .gray, radius: 15, x: 0, y: 0)
                 
             }//:VSTACK
             .padding()
-            .background(Color("mainColor"))
+            .background(AppColors.mainColor)
             
             //MARK: CHOOSE EMOTION
             Text("Как вы себя чувствуете?")
-                .foregroundColor(Color("mainColor"))
+                .foregroundColor(AppColors.mainColor)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .padding(.top, 20)
@@ -87,7 +87,7 @@ struct AddTaskView: View {
                     .font(.system(size: 24, weight: .semibold, design: .default))
                     .padding()
                     .frame(minWidth: 0, maxWidth: .infinity)
-                    .background(Color("mainColor"))
+                    .background(AppColors.mainColor)
                     .cornerRadius(15)
                     .foregroundColor(.white)
             }

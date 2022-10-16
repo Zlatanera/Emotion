@@ -12,12 +12,6 @@ class DataManager {
     
     static let shared = DataManager()
     let persistenceController = PersistenceController.shared
-
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Notes.timestamp, ascending: true)],
-//        animation: .default)
-    
-    //private var items: FetchedResults<Notes>
     
     func getNotes(completion: ([Notes]) -> Void) {
         guard let items = try? persistenceController.container.viewContext.fetch(Notes.fetchRequest()) else

@@ -29,7 +29,7 @@ struct MenuView: View {
                         .foregroundColor(.white)
                 }//:VSTACK
             }//:HSTACK
-            .background(Color("mainColor"))
+            .background(AppColors.mainColor)
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
@@ -45,7 +45,7 @@ struct MenuView: View {
                     
                     Text("О нас")
                         .frame(width: 150, height: 30, alignment: .center)
-                        .foregroundColor(Color("mainColor"))
+                        .foregroundColor(AppColors.mainColor)
                     
                     Text("Hello")
                         .multilineTextAlignment(.center)

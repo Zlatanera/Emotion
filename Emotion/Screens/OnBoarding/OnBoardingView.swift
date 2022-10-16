@@ -54,7 +54,7 @@ struct OnBoardingCardView: View {
                     .scaleEffect(isAnimating ? 1.0 : 0.6)
                 
                 Text(card.description)
-                    .foregroundColor(Color("mainColor"))
+                    .foregroundColor(AppColors.mainColor)
                     .font(.system(size: 24, weight: .semibold, design: .rounded))
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 2, x: 2, y: 2)
                     .multilineTextAlignment(.center)
@@ -68,7 +68,7 @@ struct OnBoardingCardView: View {
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-        .background(Color.white)
+        .background(AppColors.white)
         .cornerRadius(20)
         .padding(.horizontal, 20)
         
@@ -107,7 +107,7 @@ struct StartButtonView: View {
                 Capsule().strokeBorder(Color("mainColor"), lineWidth: 1.25)
             )
         }
-        .accentColor(Color("mainColor"))
+        .accentColor(AppColors.mainColor)
 
     }
 }

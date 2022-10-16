@@ -15,11 +15,11 @@ let onBoardingCardData: [OnBoardingCard] = [
         description: "Emotionly - ваш личный помощник, с которым можно поделиться не только делами на день, но и своим настроением"
       ),
     OnBoardingCard(
-        image: AnyView(AppImages.instruction1()),  //"Instraction2",
+        image: AnyView(AppImages.instruction2()),  //"Instraction2",
         description: "Записывайте задачи, дополняйте их настроением и отслеживайте статистику вашего состояния за неделю, месяц и год"
       ),
     OnBoardingCard(
-        image:  AnyView(AppImages.instruction1()), //"Instraction3",
+        image:  AnyView(AppImages.instruction3()), //"Instraction3",
         description: "Сохраните всё важное в одном месте, чтобы ничего не упустить. Ну что, начнем?"
       )
 ]
