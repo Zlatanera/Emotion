@@ -33,10 +33,10 @@ class AppImages {
     
     //Image for button
     static func addTask() -> some View {
-        Image("AddTask") //"AddTaskImage"
+        Image("AddTask")
             .resizable()
-            .scaledToFit()
-            .background(Circle().fill(AppColors.mainColor))
+            .frame(width: 20, height: 20)
+            //.background(Circle().fill(AppColors.mainColor))
     }
     
     static func addTaskImage() -> some View {

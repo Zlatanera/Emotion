@@ -20,9 +20,7 @@ struct AddTaskView: View {
             VStack(alignment: .center, spacing: 20) {
                 //MARK: HEADER
                 HStack {
-                    Image("AddTask") //
-                        .resizable()
-                        .frame(width: 20, height: 20)
+                    AppImages.addTask()
                     
                     Text("Новая запись")
                         .font(.title)

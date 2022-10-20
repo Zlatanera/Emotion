@@ -71,8 +71,13 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     
     func showStart() {
         navScene.push(.startScreen)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.showOnBoarding()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            if UserDefaults.onboardingPassed {
+                self?.showMain()
+            } else {
+                UserDefaults.onboardingPassed = true
+                self?.showOnBoarding()
+            }
         }
     }
     
