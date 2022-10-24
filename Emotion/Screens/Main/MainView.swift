@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @FetchRequest(sortDescriptors: []) var notes: FetchedResults<Notes>
+    
     
     @EnvironmentObject var coordinator: EmotionCoordinator
     @Environment(\.colorScheme) var colorScheme
@@ -122,11 +122,11 @@ struct RowItem: View {
 
 
             VStack {
-                Text("13")
+                Text(item.dayS)
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
-                Text("SEP")
+                Text(item.monthS)
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)

@@ -11,9 +11,34 @@ import CoreData
 
 @objc(Notes)
 public class Notes: NSManagedObject {
-    private let itemFormatter: DateFormatter = {
+    
+    var dayS: String {
+        if let date = timestamp {
+            return dayFormatter.string(from: date)
+        } else {
+            return "D?"
+        }
+            
+    }
+    
+    var monthS: String {
+        if let date = timestamp {
+             return monthFormatter.string(from: date)
+        } else {
+            return "M?"
+        }
+        
+    }
+    
+    private let dayFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
+        formatter.dateFormat = "d"
+        return formatter
+    }()
+    
+    private let monthFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM"
         return formatter
     }()
 }
