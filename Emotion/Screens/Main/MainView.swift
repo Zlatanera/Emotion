@@ -13,6 +13,8 @@ struct MainView: View {
     @EnvironmentObject var coordinator: EmotionCoordinator
     @Environment(\.colorScheme) var colorScheme
     
+//    @State var showMenu: Bool = false
+    
     var body: some View {
         
         ZStack {
@@ -21,15 +23,25 @@ struct MainView: View {
                     RowItem(item: item)
                         .frame(height: 100)
                 }
+                .onDelete(perform: coordinator.delete)
             }
             .listStyle(InsetGroupedListStyle())
             .frame(maxWidth: 640)
             
+            .overlay(ZStack { // попробовать spacer прижать в угол без оверлей
+                Button(action: coordinator.showMenu) {
+                    AppImages.MenuImage()
+                        .frame(width: 20, height: 20, alignment: .center)
+                }
+            }
+                        .padding(.top , 10)
+                        .padding(.leading, 15),
+                     alignment: .topLeading
+        )
+            
             .overlay(ZStack {
                 Button(action: coordinator.showAddTask) {
-                    Image("AddTaskImage") //"AddTaskImage"
-                        .resizable()
-                        .scaledToFit()
+                    AppImages.addTaskImage()
                         .background(Circle().fill(AppColors.mainColor))
                         .frame(width: 48, height: 48, alignment: .center)
                 }

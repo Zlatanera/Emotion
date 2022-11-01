@@ -45,4 +45,21 @@ class DataManager {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
+    
+    func delete(items: [Notes], completion: (Bool) -> Void) {
+        // Delete multiple objects
+        for item in items {
+            persistenceController.container.viewContext.delete(item)
+        }
+        do {
+            try persistenceController.container.viewContext.save()
+            completion(true)
+        } catch {
+            let nsError = error as NSError
+            print("Unresolved error \(nsError), \(nsError.userInfo)")
+            completion(false)
+        }
+    }
+    
+
 }

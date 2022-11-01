@@ -29,7 +29,7 @@ struct OnBoardingView: View {
 struct OnBoardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnBoardingView(cardOnBoarding: onBoardingCardData)
-            .background(Color("mainColor"))
+            .background(AppColors.mainColor)
             .ignoresSafeArea(.all)
     }
 }
@@ -104,7 +104,7 @@ struct StartButtonView: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
             .background(
-                Capsule().strokeBorder(Color("mainColor"), lineWidth: 1.25)
+                Capsule().strokeBorder(AppColors.mainColor, lineWidth: 1.25)
             )
         }
         .accentColor(AppColors.mainColor)

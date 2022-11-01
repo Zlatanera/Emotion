@@ -27,6 +27,9 @@
 		49E9CDDA28F6EBEE00D6081A /* UserDefaults+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9CDD928F6EBEE00D6081A /* UserDefaults+ext.swift */; };
 		49E9CDDD28F6F10200D6081A /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9CDDC28F6F10200D6081A /* AppColors.swift */; };
 		49E9CDDF28F6F10A00D6081A /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9CDDE28F6F10A00D6081A /* AppImages.swift */; };
+		49E9CDE3290FBC3600D6081A /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9CDE2290FBC3600D6081A /* StatsView.swift */; };
+		49E9CDE5290FBC4100D6081A /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9CDE4290FBC4100D6081A /* StatsViewModel.swift */; };
+		49E9CDE7290FBC4900D6081A /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9CDE6290FBC4900D6081A /* StatsModel.swift */; };
 		CE5069BC27478A8D006457CB /* EmotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5069BB27478A8D006457CB /* EmotionApp.swift */; };
 		CE5069C027478A96006457CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5069BF27478A96006457CB /* Assets.xcassets */; };
 		CE5069C327478A96006457CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5069C227478A96006457CB /* Preview Assets.xcassets */; };
@@ -65,6 +68,9 @@
 		49E9CDD928F6EBEE00D6081A /* UserDefaults+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+ext.swift"; sourceTree = "<group>"; };
 		49E9CDDC28F6F10200D6081A /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		49E9CDDE28F6F10A00D6081A /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
+		49E9CDE2290FBC3600D6081A /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		49E9CDE4290FBC4100D6081A /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		49E9CDE6290FBC4900D6081A /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
 		CE5069B827478A8D006457CB /* Emotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5069BB27478A8D006457CB /* EmotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionApp.swift; sourceTree = "<group>"; };
 		CE5069BF27478A96006457CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 		49C57FD0276729D600988712 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				49E9CDE1290FBBE700D6081A /* Stats */,
 				49A940F5276B0FC800BB4750 /* MenuView.swift */,
 				49E9CDD428F6EB5000D6081A /* MenuViewModel.swift */,
 				49E9CDD628F6EB5D00D6081A /* MenuModel.swift */,
@@ -151,6 +158,16 @@
 				49E9CDDE28F6F10A00D6081A /* AppImages.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		49E9CDE1290FBBE700D6081A /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				49E9CDE2290FBC3600D6081A /* StatsView.swift */,
+				49E9CDE4290FBC4100D6081A /* StatsViewModel.swift */,
+				49E9CDE6290FBC4900D6081A /* StatsModel.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 		CE5069AF27478A8D006457CB = {
@@ -207,8 +224,8 @@
 			children = (
 				49C57FCF276729C200988712 /* Start */,
 				49C57FD1276729DC00988712 /* OnBoarding */,
-				CE5069DC27478CFD006457CB /* Main */,
 				49C57FD0276729D600988712 /* Menu */,
+				CE5069DC27478CFD006457CB /* Main */,
 				CE5069DD27478D04006457CB /* AddTask */,
 				CE5069D427478B6C006457CB /* EmotionCoordinator.swift */,
 				CE5069D727478B6D006457CB /* EmotionModel.swift */,
@@ -334,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E9CDE5290FBC4100D6081A /* StatsViewModel.swift in Sources */,
 				CE5069ED27478F27006457CB /* AddTaskView.swift in Sources */,
 				49E9CDCF28F6EB2B00D6081A /* OnBoardingViewModel.swift in Sources */,
 				49E9CDD728F6EB5D00D6081A /* MenuModel.swift in Sources */,
@@ -346,6 +364,7 @@
 				49A940F4276B0AC700BB4750 /* OnBoardingCardData.swift in Sources */,
 				49A940F6276B0FC800BB4750 /* MenuView.swift in Sources */,
 				49A940F8276B0FD300BB4750 /* StartView.swift in Sources */,
+				49E9CDE3290FBC3600D6081A /* StatsView.swift in Sources */,
 				CE5069C527478A96006457CB /* Persistence.swift in Sources */,
 				CE5069E827478ED7006457CB /* CoordinatorSwiftUI.swift in Sources */,
 				498A240F277307EA000ACD36 /* AddTaskViewModel.swift in Sources */,
@@ -355,6 +374,7 @@
 				CE5069BC27478A8D006457CB /* EmotionApp.swift in Sources */,
 				49A940F0276B08A600BB4750 /* OnBoardingView.swift in Sources */,
 				49E9CDD128F6EB3900D6081A /* MainViewModel.swift in Sources */,
+				49E9CDE7290FBC4900D6081A /* StatsModel.swift in Sources */,
 				CE5069D927478B6D006457CB /* EmotionView.swift in Sources */,
 				CE5069C827478A96006457CB /* Emotion.xcdatamodeld in Sources */,
 				CE5069DB27478B6D006457CB /* EmotionModel.swift in Sources */,

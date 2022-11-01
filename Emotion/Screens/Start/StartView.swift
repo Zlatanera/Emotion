@@ -16,9 +16,10 @@ struct StartView: View {
         ZStack {
             AppColors.white
             
-            Image("StartScreen")
-                .resizable()
-                .scaledToFill()
+            AppImages.startImage()
+//            Image("StartScreen")
+//                .resizable()
+//                .scaledToFill()
                 .opacity(startAnimation ? 1 : 0)
                 .frame(width: 220, height: 220)
                 .scaleEffect(endAnimation ? 0.15 : 0.9)

@@ -100,8 +100,14 @@ extension EmotionCoordinator: Bindable {
 // MARK: Main scene data
 extension EmotionCoordinator {
     
-    func deleteItems() {
-        //data.deleteItems(offsets: IndexSet)
+    func delete(at offsets: IndexSet) {
+        var deleteItems: [Notes] = []
+        offsets.forEach({ deleteItems.append(items[$0]) })
+        data.delete(items: deleteItems) { isOK in
+            if isOK {
+                self.items = items.filter({ !deleteItems.contains($0) })
+            } 
+        }
     }
     
     func saveTaskToDB(task: String, emotion: Emotion.Smile) {

@@ -12,10 +12,9 @@ struct MenuView: View {
     @Binding var showMenu: Bool
     
     var body: some View {
-        VStack(alignment: .trailing, spacing: 0) {
+        VStack(alignment: .leading, spacing: 0) { //trailing
             HStack(alignment: .center, spacing: 14) {
-                Image("Instraction1")
-                    .resizable()
+                AppImages.instruction1()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 65, height: 65)
                     .clipShape(Circle())
@@ -33,14 +32,14 @@ struct MenuView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    VStack(alignment: .trailing, spacing: 45) {
+                    VStack(alignment: .leading, spacing: 45) { //trailing
                         TabButton(title: "Стиль оформления", image: "Style")
                         TabButton(title: "Уведомления", image: "Notification")
-                        TabButton(title: "Поддержка", image: "Support")
+                        TabButton(title: "Поддержка", image: "Support") //\(AppImages.SupportImage())
                         TabButton(title: "Оставить отзыв", image: "Review")
                     }//:VSTACK
-                    .padding()
-                    .padding(.trailing)
+                    .padding(6)
+                    .padding(.leading) //trailing
                     .padding(.top, 5)
                     
                     Text("О нас")
@@ -52,33 +51,32 @@ struct MenuView: View {
                 }//:VSTACK
             }//:SCROLL
         }//:VSTACK
-        .frame(maxWidth: .infinity, alignment: .trailing)
+        .frame(maxWidth: .infinity, alignment: .leading) //trailing
         .frame(width: getRect().width - 90)
         .frame(maxHeight: .infinity)
         .background(
             Color.white
                 .ignoresSafeArea(.container, edges: .vertical)
         )
-        .frame(maxWidth: .infinity, alignment: .trailing)
+        .frame(maxWidth: .infinity, alignment: .leading) //trailing
         //.opacity(showMenu ? 1 : 0)
     }
     
     @ViewBuilder
-    func TabButton(title: String, image: String) -> some View {
+    func TabButton(title: String, image: String) -> some View { // AnyView
         Button {
             
         } label: {
             HStack(spacing: 14) {
                 Image(image)
                     .resizable()
-                    .renderingMode(.template)
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 22, height: 22)
                 
                 Text(title)
             }
             .foregroundColor(.primary)
-            .frame(maxWidth: .infinity, alignment: .trailing)
+            .frame(maxWidth: 180, alignment: .leading) //infinity, trailing
         }
     }
 }

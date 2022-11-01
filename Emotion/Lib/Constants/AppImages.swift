@@ -111,4 +111,10 @@ class AppImages {
             .scaledToFit()
     }
     
+    static func MenuImage() -> some View {
+        Image("Menu")
+            .resizable()
+            .scaledToFit()
+    }
+    
 }
