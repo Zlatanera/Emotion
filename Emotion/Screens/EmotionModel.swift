@@ -9,6 +9,7 @@ enum Emotion {
         case onBoarding
         case startScreen
         case menu
+        case changeTask(task: Notes)
     }
     
     enum Smile: Int, CaseIterable {
@@ -36,8 +37,9 @@ enum Emotion {
             Smile.allCases.sorted(by: { $0.id < $1.id })
         }
         
-        static func getEmotionFor(id: Int) -> Emotion.Smile {
-            Smile.allCases.first(where: { $0.id == id }) ?? .normal
+        static func getEmotionFor(id: Int16?) -> Emotion.Smile {
+            guard let id = id else { return .normal }
+            return Smile.allCases.first(where: { $0.id == id }) ?? .normal
         }
     }
     

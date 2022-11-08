@@ -17,6 +17,9 @@
 		49A940F4276B0AC700BB4750 /* OnBoardingCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A940F3276B0AC700BB4750 /* OnBoardingCardData.swift */; };
 		49A940F6276B0FC800BB4750 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A940F5276B0FC800BB4750 /* MenuView.swift */; };
 		49A940F8276B0FD300BB4750 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A940F7276B0FD300BB4750 /* StartView.swift */; };
+		49DDD84E291A6E9E004EE366 /* ChangeTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDD84D291A6E9E004EE366 /* ChangeTaskView.swift */; };
+		49DDD850291A6EA8004EE366 /* ChangeTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDD84F291A6EA8004EE366 /* ChangeTaskViewModel.swift */; };
+		49DDD852291A6EB2004EE366 /* ChangeTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDD851291A6EB2004EE366 /* ChangeTaskModel.swift */; };
 		49E9CDCB28F6E73200D6081A /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9CDCA28F6E73200D6081A /* StartViewModel.swift */; };
 		49E9CDCD28F6E73D00D6081A /* StartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9CDCC28F6E73D00D6081A /* StartModel.swift */; };
 		49E9CDCF28F6EB2B00D6081A /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9CDCE28F6EB2B00D6081A /* OnBoardingViewModel.swift */; };
@@ -58,6 +61,9 @@
 		49A940F3276B0AC700BB4750 /* OnBoardingCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCardData.swift; sourceTree = "<group>"; };
 		49A940F5276B0FC800BB4750 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		49A940F7276B0FD300BB4750 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		49DDD84D291A6E9E004EE366 /* ChangeTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTaskView.swift; sourceTree = "<group>"; };
+		49DDD84F291A6EA8004EE366 /* ChangeTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTaskViewModel.swift; sourceTree = "<group>"; };
+		49DDD851291A6EB2004EE366 /* ChangeTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTaskModel.swift; sourceTree = "<group>"; };
 		49E9CDCA28F6E73200D6081A /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		49E9CDCC28F6E73D00D6081A /* StartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartModel.swift; sourceTree = "<group>"; };
 		49E9CDCE28F6EB2B00D6081A /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
@@ -143,6 +149,16 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
+		49DDD84C291A6E82004EE366 /* ChangeTask */ = {
+			isa = PBXGroup;
+			children = (
+				49DDD84D291A6E9E004EE366 /* ChangeTaskView.swift */,
+				49DDD84F291A6EA8004EE366 /* ChangeTaskViewModel.swift */,
+				49DDD851291A6EB2004EE366 /* ChangeTaskModel.swift */,
+			);
+			path = ChangeTask;
+			sourceTree = "<group>";
+		};
 		49E9CDD828F6EBB400D6081A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +238,7 @@
 		CE5069CF27478ABD006457CB /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				49DDD84C291A6E82004EE366 /* ChangeTask */,
 				49C57FCF276729C200988712 /* Start */,
 				49C57FD1276729DC00988712 /* OnBoarding */,
 				49C57FD0276729D600988712 /* Menu */,
@@ -368,6 +385,8 @@
 				CE5069C527478A96006457CB /* Persistence.swift in Sources */,
 				CE5069E827478ED7006457CB /* CoordinatorSwiftUI.swift in Sources */,
 				498A240F277307EA000ACD36 /* AddTaskViewModel.swift in Sources */,
+				49DDD850291A6EA8004EE366 /* ChangeTaskViewModel.swift in Sources */,
+				49DDD852291A6EB2004EE366 /* ChangeTaskModel.swift in Sources */,
 				CE5069E727478ED7006457CB /* NavigatorSwiftUI.swift in Sources */,
 				49E9CDDA28F6EBEE00D6081A /* UserDefaults+ext.swift in Sources */,
 				498A2411277307FC000ACD36 /* AddTaskModel.swift in Sources */,
@@ -376,6 +395,7 @@
 				49E9CDD128F6EB3900D6081A /* MainViewModel.swift in Sources */,
 				49E9CDE7290FBC4900D6081A /* StatsModel.swift in Sources */,
 				CE5069D927478B6D006457CB /* EmotionView.swift in Sources */,
+				49DDD84E291A6E9E004EE366 /* ChangeTaskView.swift in Sources */,
 				CE5069C827478A96006457CB /* Emotion.xcdatamodeld in Sources */,
 				CE5069DB27478B6D006457CB /* EmotionModel.swift in Sources */,
 				49E9CDD528F6EB5000D6081A /* MenuViewModel.swift in Sources */,

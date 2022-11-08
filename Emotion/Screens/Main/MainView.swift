@@ -20,8 +20,12 @@ struct MainView: View {
         ZStack {
             List {
                 ForEach(coordinator.items, id: \.self.task) { item in
-                    RowItem(item: item)
-                        .frame(height: 100)
+                    Button {
+                        coordinator.changeTask(task: item)
+                    } label: {
+                        RowItem(item: item)
+                            .frame(height: 100)
+                    }
                 }
                 .onDelete(perform: coordinator.delete)
             }
@@ -110,7 +114,7 @@ struct RowItem: View {
         
         HStack {
 
-            Image(Emotion.Smile.getEmotionFor(id: Int(item.emotion)).image)
+            Image(Emotion.Smile.getEmotionFor(id: item.emotion).image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(.white)
