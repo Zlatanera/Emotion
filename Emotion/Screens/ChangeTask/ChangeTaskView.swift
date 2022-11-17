@@ -17,7 +17,7 @@ struct ChangeTaskView: View {
     @State private var nameTask: String = ""
     @State private var chooseEmotion: Emotion.Smile = .normal
     
-    let changeTask: Notes?
+    let changePair: Emotion.NotesIndex
     
     var body: some View {
         VStack {
@@ -82,7 +82,7 @@ struct ChangeTaskView: View {
             
             //MARK: SAVE BUTTON
             Button {
-                coordinator.saveTaskToDB(task: nameTask, emotion: chooseEmotion)
+                coordinator.updateTaskInDB(description: nameTask, emotion: chooseEmotion, pair: changePair)
                 coordinator.back()
             } label: {
                 Text("Сохранить")
@@ -99,14 +99,8 @@ struct ChangeTaskView: View {
             Spacer()
         }//:VSTACK
         .onAppear {
-            nameTask = changeTask?.task ?? ""
-            chooseEmotion = Emotion.Smile.getEmotionFor(id: changeTask?.emotion)
+            nameTask = changePair.1.task ?? ""
+            chooseEmotion = Emotion.Smile.getEmotionFor(id: changePair.1.emotion)
         }
-    }
-}
-
-struct ChangeTaskView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChangeTaskView(changeTask: nil)
     }
 }

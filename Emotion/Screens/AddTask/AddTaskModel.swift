@@ -10,7 +10,7 @@ import Foundation
 enum AddTask {
     struct forDB {
         let emotion: Emotion.Smile
-        let task: String
+        let description: String
         let timestamp = Date.now
     }
 }

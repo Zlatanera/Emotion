@@ -3,13 +3,15 @@ import SwiftUI
 
 enum Emotion {
     
+    typealias NotesIndex = (Int, Notes)
+    
     enum Flow {
         case main
         case addTask
         case onBoarding
         case startScreen
         case menu
-        case changeTask(task: Notes)
+        case changeTask(pair: NotesIndex)
     }
     
     enum Smile: Int, CaseIterable {

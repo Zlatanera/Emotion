@@ -78,7 +78,7 @@ struct AddTaskView: View {
             
             //MARK: SAVE BUTTON
             Button {
-                coordinator.saveTaskToDB(task: nameTask, emotion: chooseEmotion)
+                coordinator.saveTaskToDB(description: nameTask, emotion: chooseEmotion)
                 coordinator.back()
             } label: {
                 Text("Сохранить")

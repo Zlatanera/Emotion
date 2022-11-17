@@ -35,6 +35,18 @@ class DataManager {
         }
     }
     
+    func updateTask(for model: AddTask.forDB, item: Notes, completion: (Notes?) -> Void) {
+            item.setData(for: model)
+            do {
+                try persistenceController.container.viewContext.save()
+                completion(item)
+            } catch {
+                completion(nil)
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
     func delete(item: Notes) {
         persistenceController.container.viewContext.delete(item)
 

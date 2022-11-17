@@ -30,7 +30,7 @@ extension Notes : Identifiable {
 extension Notes {
     func setData(for model: AddTask.forDB) {
         self.emotion = Int16(model.emotion.id)
-        self.task = model.task
+        self.task = model.description
         self.timestamp = model.timestamp
     }
     

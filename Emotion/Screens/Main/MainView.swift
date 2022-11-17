@@ -19,11 +19,11 @@ struct MainView: View {
         
         ZStack {
             List {
-                ForEach(coordinator.items, id: \.self.task) { item in
+                ForEach(Array(coordinator.items.enumerated()), id: \.self.0) { pair in
                     Button {
-                        coordinator.changeTask(task: item)
+                        coordinator.changeTask(pair: pair)
                     } label: {
-                        RowItem(item: item)
+                        RowItem(item: pair.1)
                             .frame(height: 100)
                     }
                 }

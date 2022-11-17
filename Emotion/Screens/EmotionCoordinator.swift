@@ -54,7 +54,7 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
         case .onBoarding: currentScene = AnyView(OnBoardingView().environmentObject(self))
         case .startScreen: currentScene = AnyView(StartView(endAnimation: true).environmentObject(self))
         case .menu: currentScene = AnyView(MenuView(showMenu: .constant(false)).environmentObject(self))
-        case .changeTask(let task): currentScene = AnyView(ChangeTaskView(changeTask: task).environmentObject(self))
+        case .changeTask(let pair): currentScene = AnyView(ChangeTaskView(changePair: pair).environmentObject(self))
         }
     }
     
@@ -86,8 +86,8 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
         navScene.push(.menu)
     }
     
-    func changeTask(task: Notes) {
-        navScene.push(.changeTask(task: task))
+    func changeTask(pair: Emotion.NotesIndex) {
+        navScene.push(.changeTask(pair: pair))
     }
     
 }
@@ -115,11 +115,20 @@ extension EmotionCoordinator {
         }
     }
     
-    func saveTaskToDB(task: String, emotion: Emotion.Smile) {
-        data.addTask(for: AddTask.forDB(emotion: emotion, task: task), completion: {
+    func saveTaskToDB(description: String, emotion: Emotion.Smile) {
+        data.addTask(for: AddTask.forDB(emotion: emotion, description: description), completion: {
             guard let item = $0 else { return }
             DispatchQueue.main.async {
                 self.items.append(item)
+            }
+        })
+    }
+    
+    func updateTaskInDB(description: String, emotion: Emotion.Smile, pair: Emotion.NotesIndex) {
+        data.updateTask(for: AddTask.forDB(emotion: emotion, description: description), item: pair.1, completion: {
+            guard let item = $0 else { return }
+            DispatchQueue.main.async {
+                self.items[pair.0] = item
             }
         })
     }
