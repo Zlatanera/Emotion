@@ -11,6 +11,10 @@ struct MenuView: View {
     
     @Binding var showMenu: Bool
     
+    let coordinator: EmotionCoordinator?
+    
+    private let halfScreenWidth = UIScreen.main.bounds.width / 2
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) { //trailing
             HStack(alignment: .center, spacing: 14) {
@@ -33,10 +37,10 @@ struct MenuView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     VStack(alignment: .leading, spacing: 45) { //trailing
-                        TabButton(title: "Стиль оформления", image: "Style")
-                        TabButton(title: "Уведомления", image: "Notification")
-                        TabButton(title: "Поддержка", image: "Support") //\(AppImages.SupportImage())
-                        TabButton(title: "Оставить отзыв", image: "Review")
+                        TabButton(title: "Стиль оформления", image: "Style", action: { coordinator?.showStats() } )
+                        TabButton(title: "Уведомления", image: "Notification", action: {  })
+                        TabButton(title: "Поддержка", image: "Support", action: {  }) //\(AppImages.SupportImage())
+                        TabButton(title: "Оставить отзыв", image: "Review", action: {  })
                     }//:VSTACK
                     .padding(6)
                     .padding(.leading) //trailing
@@ -51,21 +55,43 @@ struct MenuView: View {
                 }//:VSTACK
             }//:SCROLL
         }//:VSTACK
-        .frame(maxWidth: .infinity, alignment: .leading) //trailing
-        .frame(width: getRect().width - 90)
         .frame(maxHeight: .infinity)
         .background(
             Color.white
                 .ignoresSafeArea(.container, edges: .vertical)
         )
-        .frame(maxWidth: .infinity, alignment: .leading) //trailing
-        //.opacity(showMenu ? 1 : 0)
+        .gesture(
+            DragGesture(minimumDistance: 50)
+                .onEnded { endedGesture in
+                    if (endedGesture.location.x - endedGesture.startLocation.x) < 0 {
+                        withAnimation {
+                            showMenu.toggle()
+                        }
+                    }
+                }
+        )
+        .opacity(showMenu ? 1 : 0)
+        .frame(width: halfScreenWidth, alignment: .leading)
+        .offset(x: showMenu ? .zero : -halfScreenWidth)
     }
     
-    @ViewBuilder
-    func TabButton(title: String, image: String) -> some View { // AnyView
+}
+
+struct MenuView_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuView(showMenu: .constant(false), coordinator: nil)
+    }
+}
+
+struct TabButton: View {
+    
+    let title: String
+    let image: String
+    let action: () -> Void
+    
+    var body: some View {
         Button {
-            
+            action()
         } label: {
             HStack(spacing: 14) {
                 Image(image)
@@ -78,17 +104,5 @@ struct MenuView: View {
             .foregroundColor(.primary)
             .frame(maxWidth: 180, alignment: .leading) //infinity, trailing
         }
-    }
-}
-
-struct MenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuView(showMenu: .constant(false))
-    }
-}
-
-extension View {
-    func getRect() -> CGRect {
-        return UIScreen.main.bounds
     }
 }

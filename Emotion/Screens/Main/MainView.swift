@@ -13,11 +13,11 @@ struct MainView: View {
     @EnvironmentObject var coordinator: EmotionCoordinator
     @Environment(\.colorScheme) var colorScheme
     
-//    @State var showMenu: Bool = false
+    @State var showMenu: Bool = false
     
     var body: some View {
         
-        ZStack {
+        ZStack(alignment: .leading) {
             List {
                 ForEach(Array(coordinator.items.enumerated()), id: \.self.0) { pair in
                     Button {
@@ -32,16 +32,19 @@ struct MainView: View {
             .listStyle(InsetGroupedListStyle())
             .frame(maxWidth: 640)
             
-            .overlay(ZStack { // попробовать spacer прижать в угол без оверлей
-                Button(action: coordinator.showMenu) {
-                    AppImages.MenuImage()
-                        .frame(width: 20, height: 20, alignment: .center)
-                }
-            }
-                        .padding(.top , 10)
-                        .padding(.leading, 15),
-                     alignment: .topLeading
-        )
+            .overlay(
+                    Button(action: {
+                        withAnimation {
+                            showMenu.toggle()
+                        }
+                    }) {
+                        AppImages.MenuImage()
+                            .frame(width: 20, height: 20, alignment: .center)
+                    }
+                .padding(.top , 10)
+                .padding(.leading, 15),
+                alignment: .topLeading
+            )
             
             .overlay(ZStack {
                 Button(action: coordinator.showAddTask) {
@@ -55,6 +58,7 @@ struct MainView: View {
                 .padding(.trailing, 15),
                      alignment: .bottomTrailing
             )
+            MenuView(showMenu: $showMenu, coordinator: coordinator)
         }
     }
 }

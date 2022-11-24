@@ -10,7 +10,7 @@ enum Emotion {
         case addTask
         case onBoarding
         case startScreen
-        case menu
+        case stats
         case changeTask(pair: NotesIndex)
     }
     
