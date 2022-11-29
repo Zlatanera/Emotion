@@ -16,7 +16,7 @@ struct MenuView: View {
     private let halfScreenWidth = UIScreen.main.bounds.width / 2
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) { //trailing
+        VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .center, spacing: 14) {
                 AppImages.instruction1()
                     .aspectRatio(contentMode: .fill)
@@ -36,13 +36,13 @@ struct MenuView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    VStack(alignment: .leading, spacing: 45) { //trailing
-                        TabButton(title: "Стиль оформления", image: "Style", action: { coordinator?.showStats() } )
-                        TabButton(title: "Уведомления", image: "Notification", action: {  })
-                        TabButton(title: "Поддержка", image: "Support", action: {  }) //\(AppImages.SupportImage())
-                        TabButton(title: "Оставить отзыв", image: "Review", action: {  })
+                    VStack(alignment: .leading, spacing: 45) {
+                        TabButton(title: "Статистика", image: "Style", action: { coordinator?.showStats() } )
+                        TabButton(title: "Подсказки", image: "Notification", action: { coordinator?.showHints() })
+                        TabButton(title: "Поддержка", image: "Support", action: {  })
+                        TabButton(title: "Настройки", image: "Review", action: {  })
                     }//:VSTACK
-                    .padding(6)
+                    .padding(10)
                     .padding(.leading) //trailing
                     .padding(.top, 5)
                     

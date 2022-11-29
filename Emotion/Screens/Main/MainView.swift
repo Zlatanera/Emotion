@@ -24,12 +24,12 @@ struct MainView: View {
                         coordinator.changeTask(pair: pair)
                     } label: {
                         RowItem(item: pair.1)
-                            .frame(height: 100)
+                            
                     }
+                    .listRowInsets(EdgeInsets())
                 }
                 .onDelete(perform: coordinator.delete)
             }
-            .listStyle(InsetGroupedListStyle())
             .frame(maxWidth: 640)
             
             .overlay(
@@ -125,7 +125,6 @@ struct RowItem: View {
                 .background(AppColors.white)
                 .clipShape(Circle())
                 .frame(width: 60, height: 60)
-                .padding(5)
 
             Text(item.task ?? "Empty")
                 .font(.footnote)
@@ -135,11 +134,11 @@ struct RowItem: View {
                 .lineLimit(4)
                 .padding(.leading, 2)
 
-            HStack {
-                ExDivider()
-            }
-            .padding(.trailing, 3)
-
+            Spacer()
+            
+            Divider()
+                .background(Color.black)
+                .frame(width: 4)
 
             VStack {
                 Text(item.dayS)
@@ -151,25 +150,13 @@ struct RowItem: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
             }
-            .padding(.trailing, 5)
-
+            .frame(width: 80)
         }
+        .padding(.horizontal, 5)
         .background(AppColors.mainColor)
         .cornerRadius(15)
         .frame(maxWidth: 640)
         .padding(10)
-
-    }
-}
-
-struct ExDivider: View {
-    let color: Color = .white
-    let width: CGFloat = 4
-    var body: some View {
-        Rectangle()
-            .fill(color)
-            .frame(height: width)
-            .rotationEffect(.degrees(90))
-            
+        .frame(height: 100)
     }
 }

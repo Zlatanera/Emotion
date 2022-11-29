@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		495E527927620406003A5F12 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E527827620406003A5F12 /* DataManager.swift */; };
+		49609198293610D900B104ED /* HintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49609197293610D900B104ED /* HintsView.swift */; };
+		4960919A293610E400B104ED /* HintsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49609199293610E400B104ED /* HintsViewModel.swift */; };
+		4960919C293610EE00B104ED /* HintsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960919B293610EE00B104ED /* HintsModel.swift */; };
 		498A240F277307EA000ACD36 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A240E277307EA000ACD36 /* AddTaskViewModel.swift */; };
 		498A2411277307FC000ACD36 /* AddTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2410277307FC000ACD36 /* AddTaskModel.swift */; };
 		498A241427730D07000ACD36 /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */; };
@@ -52,6 +55,9 @@
 
 /* Begin PBXFileReference section */
 		495E527827620406003A5F12 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		49609197293610D900B104ED /* HintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsView.swift; sourceTree = "<group>"; };
+		49609199293610E400B104ED /* HintsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsViewModel.swift; sourceTree = "<group>"; };
+		4960919B293610EE00B104ED /* HintsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsModel.swift; sourceTree = "<group>"; };
 		498A240E277307EA000ACD36 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		498A2410277307FC000ACD36 /* AddTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskModel.swift; sourceTree = "<group>"; };
 		498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -106,6 +112,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		496091962936106600B104ED /* Hints */ = {
+			isa = PBXGroup;
+			children = (
+				49609197293610D900B104ED /* HintsView.swift */,
+				49609199293610E400B104ED /* HintsViewModel.swift */,
+				4960919B293610EE00B104ED /* HintsModel.swift */,
+			);
+			path = Hints;
+			sourceTree = "<group>";
+		};
 		49C57FCC27670FAE00988712 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				49E9CDE1290FBBE700D6081A /* Stats */,
+				496091962936106600B104ED /* Hints */,
 				49A940F5276B0FC800BB4750 /* MenuView.swift */,
 				49E9CDD428F6EB5000D6081A /* MenuViewModel.swift */,
 				49E9CDD628F6EB5D00D6081A /* MenuModel.swift */,
@@ -374,6 +391,7 @@
 				49E9CDD728F6EB5D00D6081A /* MenuModel.swift in Sources */,
 				49E9CDCB28F6E73200D6081A /* StartViewModel.swift in Sources */,
 				49E9CDDF28F6F10A00D6081A /* AppImages.swift in Sources */,
+				4960919C293610EE00B104ED /* HintsModel.swift in Sources */,
 				495E527927620406003A5F12 /* DataManager.swift in Sources */,
 				498A241427730D07000ACD36 /* Notes+CoreDataClass.swift in Sources */,
 				CE5069E927478ED7006457CB /* Bindable.swift in Sources */,
@@ -395,6 +413,7 @@
 				49E9CDD128F6EB3900D6081A /* MainViewModel.swift in Sources */,
 				49E9CDE7290FBC4900D6081A /* StatsModel.swift in Sources */,
 				CE5069D927478B6D006457CB /* EmotionView.swift in Sources */,
+				49609198293610D900B104ED /* HintsView.swift in Sources */,
 				49DDD84E291A6E9E004EE366 /* ChangeTaskView.swift in Sources */,
 				CE5069C827478A96006457CB /* Emotion.xcdatamodeld in Sources */,
 				CE5069DB27478B6D006457CB /* EmotionModel.swift in Sources */,
@@ -407,6 +426,7 @@
 				49E9CDDD28F6F10200D6081A /* AppColors.swift in Sources */,
 				CE5069E127478EA1006457CB /* NavigationControllerSwiftUI.swift in Sources */,
 				CE5069E227478EA1006457CB /* NavigationControllerGeneric.swift in Sources */,
+				4960919A293610E400B104ED /* HintsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

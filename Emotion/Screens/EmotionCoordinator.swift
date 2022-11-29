@@ -54,6 +54,7 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
         case .onBoarding: currentScene = AnyView(OnBoardingView().environmentObject(self))
         case .startScreen: currentScene = AnyView(StartView(endAnimation: true).environmentObject(self))
         case .stats: currentScene = AnyView(StatsView().environmentObject(self))
+        case .hints: currentScene = AnyView(HintsView().environmentObject(self))
         case .changeTask(let pair): currentScene = AnyView(ChangeTaskView(changePair: pair).environmentObject(self))
         }
     }
@@ -84,6 +85,10 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     
     func showStats() {
         navScene.push(.stats)
+    }
+    
+    func showHints() {
+        navScene.push(.hints)
     }
     
     func changeTask(pair: Emotion.NotesIndex) {
