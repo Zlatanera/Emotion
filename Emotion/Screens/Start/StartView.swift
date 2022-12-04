@@ -17,9 +17,6 @@ struct StartView: View {
             AppColors.white
             
             AppImages.startImage()
-//            Image("StartScreen")
-//                .resizable()
-//                .scaledToFill()
                 .opacity(startAnimation ? 1 : 0)
                 .frame(width: 220, height: 220)
                 .scaleEffect(endAnimation ? 0.15 : 0.9)
@@ -40,11 +37,11 @@ struct StartView: View {
         }//:ZSTACK
         .ignoresSafeArea()
         .onAppear {
-            withAnimation(.spring().delay(0.9)) {
+            withAnimation(.spring().delay(0.3)) {
                 startAnimation.toggle()
             }
             
-            withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 1.05, blendDuration: 1.05).delay(1.5)) {
+            withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 1.05, blendDuration: 1.05).delay(5)) {
                 endAnimation.toggle()
             }
         }

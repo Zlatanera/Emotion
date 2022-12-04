@@ -80,7 +80,7 @@ class AppImages {
     //Start Screen Image
     
     static func startImage() -> some View {
-        Image("startScreen")
+        Image("StartScreen")
             .resizable()
             .scaledToFit()
     }

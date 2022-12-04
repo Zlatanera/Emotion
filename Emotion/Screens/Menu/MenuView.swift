@@ -37,8 +37,8 @@ struct MenuView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     VStack(alignment: .leading, spacing: 45) {
-                        TabButton(title: "Статистика", image: "Style", action: { coordinator?.showStats() } )
-                        TabButton(title: "Подсказки", image: "Notification", action: { coordinator?.showHints() })
+                        TabButton(title: "Статистика", image: "Statistics", action: { coordinator?.showStats() } )
+                        TabButton(title: "Подсказки", image: "Hints", action: { coordinator?.showHints() })
                         TabButton(title: "Поддержка", image: "Support", action: {  })
                         TabButton(title: "Настройки", image: "Review", action: {  })
                     }//:VSTACK
