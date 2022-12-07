@@ -10,7 +10,7 @@ enum Emotion {
         case addTask
         case onBoarding
         case startScreen
-        case stats
+        case stats(items: [Notes])
         case hints
         case changeTask(pair: NotesIndex)
     }

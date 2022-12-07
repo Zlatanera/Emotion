@@ -11,6 +11,10 @@
 		49609198293610D900B104ED /* HintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49609197293610D900B104ED /* HintsView.swift */; };
 		4960919A293610E400B104ED /* HintsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49609199293610E400B104ED /* HintsViewModel.swift */; };
 		4960919C293610EE00B104ED /* HintsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960919B293610EE00B104ED /* HintsModel.swift */; };
+		496091A3293F7F3C00B104ED /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496091A2293F7F3C00B104ED /* SettingView.swift */; };
+		496091A5293F7F7500B104ED /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496091A4293F7F7500B104ED /* SettingViewModel.swift */; };
+		496091A7293F7F7E00B104ED /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496091A6293F7F7E00B104ED /* SettingModel.swift */; };
+		496091AA2940B22500B104ED /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 496091A92940B22500B104ED /* SwiftUICharts */; };
 		498A240F277307EA000ACD36 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A240E277307EA000ACD36 /* AddTaskViewModel.swift */; };
 		498A2411277307FC000ACD36 /* AddTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2410277307FC000ACD36 /* AddTaskModel.swift */; };
 		498A241427730D07000ACD36 /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */; };
@@ -58,6 +62,9 @@
 		49609197293610D900B104ED /* HintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsView.swift; sourceTree = "<group>"; };
 		49609199293610E400B104ED /* HintsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsViewModel.swift; sourceTree = "<group>"; };
 		4960919B293610EE00B104ED /* HintsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsModel.swift; sourceTree = "<group>"; };
+		496091A2293F7F3C00B104ED /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		496091A4293F7F7500B104ED /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		496091A6293F7F7E00B104ED /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		498A240E277307EA000ACD36 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		498A2410277307FC000ACD36 /* AddTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskModel.swift; sourceTree = "<group>"; };
 		498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -106,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496091AA2940B22500B104ED /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +128,16 @@
 				4960919B293610EE00B104ED /* HintsModel.swift */,
 			);
 			path = Hints;
+			sourceTree = "<group>";
+		};
+		4960919D293F7E0E00B104ED /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				496091A2293F7F3C00B104ED /* SettingView.swift */,
+				496091A4293F7F7500B104ED /* SettingViewModel.swift */,
+				496091A6293F7F7E00B104ED /* SettingModel.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		49C57FCC27670FAE00988712 /* Data */ = {
@@ -147,6 +165,7 @@
 		49C57FD0276729D600988712 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				4960919D293F7E0E00B104ED /* Settings */,
 				49E9CDE1290FBBE700D6081A /* Stats */,
 				496091962936106600B104ED /* Hints */,
 				49A940F5276B0FC800BB4750 /* MenuView.swift */,
@@ -331,6 +350,9 @@
 			dependencies = (
 			);
 			name = Emotion;
+			packageProductDependencies = (
+				496091A92940B22500B104ED /* SwiftUICharts */,
+			);
 			productName = Emotion;
 			productReference = CE5069B827478A8D006457CB /* Emotion.app */;
 			productType = "com.apple.product-type.application";
@@ -359,6 +381,9 @@
 				Base,
 			);
 			mainGroup = CE5069AF27478A8D006457CB;
+			packageReferences = (
+				496091A82940B22500B104ED /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+			);
 			productRefGroup = CE5069B927478A8D006457CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -397,12 +422,14 @@
 				CE5069E927478ED7006457CB /* Bindable.swift in Sources */,
 				CE5069EB27478F1D006457CB /* MainView.swift in Sources */,
 				49A940F4276B0AC700BB4750 /* OnBoardingCardData.swift in Sources */,
+				496091A3293F7F3C00B104ED /* SettingView.swift in Sources */,
 				49A940F6276B0FC800BB4750 /* MenuView.swift in Sources */,
 				49A940F8276B0FD300BB4750 /* StartView.swift in Sources */,
 				49E9CDE3290FBC3600D6081A /* StatsView.swift in Sources */,
 				CE5069C527478A96006457CB /* Persistence.swift in Sources */,
 				CE5069E827478ED7006457CB /* CoordinatorSwiftUI.swift in Sources */,
 				498A240F277307EA000ACD36 /* AddTaskViewModel.swift in Sources */,
+				496091A5293F7F7500B104ED /* SettingViewModel.swift in Sources */,
 				49DDD850291A6EA8004EE366 /* ChangeTaskViewModel.swift in Sources */,
 				49DDD852291A6EB2004EE366 /* ChangeTaskModel.swift in Sources */,
 				CE5069E727478ED7006457CB /* NavigatorSwiftUI.swift in Sources */,
@@ -418,6 +445,7 @@
 				CE5069C827478A96006457CB /* Emotion.xcdatamodeld in Sources */,
 				CE5069DB27478B6D006457CB /* EmotionModel.swift in Sources */,
 				49E9CDD528F6EB5000D6081A /* MenuViewModel.swift in Sources */,
+				496091A7293F7F7E00B104ED /* SettingModel.swift in Sources */,
 				49E9CDCD28F6E73D00D6081A /* StartModel.swift in Sources */,
 				CE5069D827478B6D006457CB /* EmotionCoordinator.swift in Sources */,
 				49A940F2276B08B400BB4750 /* OnBoardingModel.swift in Sources */,
@@ -629,6 +657,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		496091A82940B22500B104ED /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willdale/SwiftUICharts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		496091A92940B22500B104ED /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 496091A82940B22500B104ED /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CE5069C627478A96006457CB /* Emotion.xcdatamodeld */ = {
