@@ -15,6 +15,7 @@
 		496091A5293F7F7500B104ED /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496091A4293F7F7500B104ED /* SettingViewModel.swift */; };
 		496091A7293F7F7E00B104ED /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496091A6293F7F7E00B104ED /* SettingModel.swift */; };
 		496091AA2940B22500B104ED /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 496091A92940B22500B104ED /* SwiftUICharts */; };
+		496091AC29421F1000B104ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496091AB29421F1000B104ED /* AppDelegate.swift */; };
 		498A240F277307EA000ACD36 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A240E277307EA000ACD36 /* AddTaskViewModel.swift */; };
 		498A2411277307FC000ACD36 /* AddTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2410277307FC000ACD36 /* AddTaskModel.swift */; };
 		498A241427730D07000ACD36 /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */; };
@@ -65,6 +66,7 @@
 		496091A2293F7F3C00B104ED /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		496091A4293F7F7500B104ED /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		496091A6293F7F7E00B104ED /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		496091AB29421F1000B104ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		498A240E277307EA000ACD36 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		498A2410277307FC000ACD36 /* AddTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskModel.swift; sourceTree = "<group>"; };
 		498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -244,6 +246,7 @@
 				CE5069CE27478AB6006457CB /* Lib */,
 				CE5069CF27478ABD006457CB /* Screens */,
 				CE5069BB27478A8D006457CB /* EmotionApp.swift */,
+				496091AB29421F1000B104ED /* AppDelegate.swift */,
 				CE5069BF27478A96006457CB /* Assets.xcassets */,
 				CE5069C127478A96006457CB /* Preview Content */,
 			);
@@ -432,6 +435,7 @@
 				496091A5293F7F7500B104ED /* SettingViewModel.swift in Sources */,
 				49DDD850291A6EA8004EE366 /* ChangeTaskViewModel.swift in Sources */,
 				49DDD852291A6EB2004EE366 /* ChangeTaskModel.swift in Sources */,
+				496091AC29421F1000B104ED /* AppDelegate.swift in Sources */,
 				CE5069E727478ED7006457CB /* NavigatorSwiftUI.swift in Sources */,
 				49E9CDDA28F6EBEE00D6081A /* UserDefaults+ext.swift in Sources */,
 				498A2411277307FC000ACD36 /* AddTaskModel.swift in Sources */,

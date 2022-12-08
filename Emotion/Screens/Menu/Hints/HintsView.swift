@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct HintsView: View {
     
     @EnvironmentObject var coordinator: EmotionCoordinator
+    @ObservedObject var viewModel = HintsViewModel()
+    
+    let count: Int
     
     var body: some View {
         VStack {
@@ -66,16 +70,33 @@ struct HintsView: View {
                             .foregroundColor(AppColors.mainColor)
                     }//:HSTACK
                     .frame(height: 250)
+                    
+                    HStack {
+                        Image(systemName: "heart.circle.fill")
+                            .resizable()
+                            .foregroundColor(viewModel.enoughTaskCount ? AppColors.veryHappy : AppColors.normal)
+                            .frame(width: 80, height: 80)
+                            
+                        Spacer()
+                        
+                        Text("В данный момент у вас /10")//\(viewModel.enoughTaskCount.count)
+                            .foregroundColor(AppColors.mainColor)
+                    }//:HSTACK
+                    .frame(height: 100)
+                    
                 }//:VSTACK
             }//:SCROLL
             
             Spacer()
+        }
+        .onAppear {
+            viewModel.updateTaskCount(taskCount: count)
         }
     }
 }
 
 struct HintsView_Previews: PreviewProvider {
     static var previews: some View {
-        HintsView()
+        HintsView(count: 1)
     }
 }

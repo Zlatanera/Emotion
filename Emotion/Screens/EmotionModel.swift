@@ -11,7 +11,7 @@ enum Emotion {
         case onBoarding
         case startScreen
         case stats(items: [Notes])
-        case hints
+        case hints(count: Int)
         case changeTask(pair: NotesIndex)
     }
     
