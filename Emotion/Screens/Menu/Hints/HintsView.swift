@@ -79,7 +79,7 @@ struct HintsView: View {
                             
                         Spacer()
                         
-                        Text("В данный момент у вас /10")//\(viewModel.enoughTaskCount.count)
+                        Text("В данный момент у вас/10")//\(viewModel.enoughTaskCount.count)
                             .foregroundColor(AppColors.mainColor)
                     }//:HSTACK
                     .frame(height: 100)
