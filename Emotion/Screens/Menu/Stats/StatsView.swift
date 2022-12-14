@@ -43,22 +43,6 @@ struct StatsView: View {
                 LineChart(chartData: data)
                     .pointMarkers(chartData: data)
                     .touchOverlay(chartData: data, specifier: "%.0f")
-//                    .yAxisPOI(chartData: data,
-//                              markerName: "Step Count Aim",
-//                              markerValue: 15_000,
-//                              labelPosition: .center(specifier: "%.0f"),
-//                              labelColour: Color.black,
-//                              labelBackground: Color(red: 1.0, green: 0.75, blue: 0.25),
-//                              lineColour: Color(red: 1.0, green: 0.75, blue: 0.25),
-//                              strokeStyle: StrokeStyle(lineWidth: 3, dash: [5,10]))
-//                    .yAxisPOI(chartData: data,
-//                              markerName: "Minimum Recommended",
-//                              markerValue: 10_000,
-//                              labelPosition: .center(specifier: "%.0f"),
-//                              labelColour: Color.white,
-//                              labelBackground: Color(red: 0.25, green: 0.75, blue: 1.0),
-//                              lineColour: Color(red: 0.25, green: 0.75, blue: 1.0),
-//                              strokeStyle: StrokeStyle(lineWidth: 3, dash: [5,10]))
                     .averageLine(chartData: data,
                                  strokeStyle: StrokeStyle(lineWidth: 3, dash: [5,10]))
                     .xAxisGrid(chartData: data)
@@ -69,13 +53,15 @@ struct StatsView: View {
                     .headerBox(chartData: data)
                     .legends(chartData: data, columns: [GridItem(.flexible()), GridItem(.flexible())])
                     .id(data.id)
-                    .frame(minWidth: 150, maxWidth: 900, minHeight: 150, idealHeight: 250, maxHeight: 400, alignment: .center)
+                    .frame(minHeight: 150, idealHeight: 250, maxHeight: 400, alignment: .center)
+                    .padding(.horizontal, 10)
                 }
                 Spacer()
             }//:VSTACK
             .navigationTitle("Week of Data")
             .onAppear {
                 viewModel.load(items: items)
+//                viewModel.weekOfData()
             }
         
         }//:BODY

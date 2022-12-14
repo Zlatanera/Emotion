@@ -18,13 +18,17 @@ class StatsViewModel: ObservableObject {
     
     func load(items: [Notes]) {
         let points = items.map({ $0.makeChartDataPoint() })
-        let data = LineDataSet(dataPoints: points)
+        let data = LineDataSet(dataPoints: points,
+                style: LineStyle(lineColour: ColourStyle(colour: .red), lineType: .curvedLine))
+            
         
         let gridStyle  = GridStyle(numberOfLines: 6,
                                    lineColour   : Color(.lightGray).opacity(0.5),
                                    lineWidth    : 1,
                                    dash         : [8],
                                    dashPhase    : 0)
+        
+        let xAxisLabels = items.map({ $0.dayS })
         
         let chartStyle = LineChartStyle(infoBoxPlacement    : .infoBox(isStatic: false),
                                         infoBoxBorderColour : Color.primary,
@@ -50,8 +54,7 @@ class StatsViewModel: ObservableObject {
         self.data = LineChartData(dataSets: data, chartStyle: chartStyle)
         
     }
-    
-    func weekOfData() -> LineChartData {
+    func weekOfData() {
             let data = LineDataSet(dataPoints: [
                 LineChartDataPoint(value: 12000, xAxisLabel: "M", description: "Monday"),
                 LineChartDataPoint(value: 10000, xAxisLabel: "T", description: "Tuesday"),
@@ -67,8 +70,6 @@ class StatsViewModel: ObservableObject {
             
             let metadata   = ChartMetadata(title: "Step Count", subtitle: "Over a Week")
             
-            let xAxisLabels: [String] = data.dataPoints.map({ $0.xAxisLabel ?? "ПОН" })
-        
             let gridStyle  = GridStyle(numberOfLines: 7,
                                        lineColour   : Color(.lightGray).opacity(0.5),
                                        lineWidth    : 1,
@@ -96,18 +97,9 @@ class StatsViewModel: ObservableObject {
                                             
                                             globalAnimation     : .easeOut(duration: 1))
             
-            return LineChartData(dataSets: data,
-                                 metadata: metadata,
-                                 xAxisLabels: xAxisLabels,
-                                 chartStyle: chartStyle)
+        self.data = LineChartData(dataSets       : data,
+                                 metadata       : metadata,
+                                 chartStyle     : chartStyle)
             
-    }
-}
-
-extension Notes {
-    
-    func makeChartDataPoint() -> LineChartDataPoint {
-        LineChartDataPoint(value: Double(self.emotion), description: self.task, date: self.timestamp)
-    }
-    
+        }
 }

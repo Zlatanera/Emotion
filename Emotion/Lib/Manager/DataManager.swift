@@ -59,7 +59,6 @@ class DataManager {
     }
     
     func delete(items: [Notes], completion: (Bool) -> Void) {
-        // Delete multiple objects
         for item in items {
             persistenceController.container.viewContext.delete(item)
         }

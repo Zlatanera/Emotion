@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import SwiftUICharts
 
 @objc(Notes)
 public class Notes: NSManagedObject {
@@ -30,6 +31,20 @@ public class Notes: NSManagedObject {
         
     }
     
+    var stringDate: String {
+        if let date = timestamp {
+             return dateFormatter.string(from: date)
+        } else {
+            return "d?"
+        }
+    }
+    
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter
+    }()
+    
     private let dayFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "d"
@@ -41,4 +56,12 @@ public class Notes: NSManagedObject {
         formatter.dateFormat = "MMM"
         return formatter
     }()
+}
+
+extension Notes {
+    
+    func makeChartDataPoint() -> LineChartDataPoint {
+        LineChartDataPoint(value: Double(self.emotion), xAxisLabel: self.dayS, description: self.task, date: self.timestamp)
+    }
+    
 }
