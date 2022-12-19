@@ -39,7 +39,7 @@ struct MenuView: View {
                     VStack(alignment: .leading, spacing: 45) {
                         TabButton(title: "Статистика", image: "Statistics", action: { coordinator?.showStats() } )
                         TabButton(title: "Подсказки", image: "Hints", action: { coordinator?.showHints() })
-                        TabButton(title: "Поддержка", image: "Support", action: {  })
+                        TabButton(title: "Поддержка", image: "Support", action: { coordinator?.showMail() })
                         TabButton(title: "Настройки", image: "Review", action: {  })
                     }//:VSTACK
                     .padding(10)
@@ -106,3 +106,5 @@ struct TabButton: View {
         }
     }
 }
+
+

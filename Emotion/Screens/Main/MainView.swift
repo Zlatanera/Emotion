@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct MainView: View {
     
     
     @EnvironmentObject var coordinator: EmotionCoordinator
     @Environment(\.colorScheme) var colorScheme
+    
+    @ObservedObject var viewModel = MainViewModel()
     
     @State var showMenu: Bool = false
     
@@ -59,6 +62,13 @@ struct MainView: View {
                      alignment: .bottomTrailing
             )
             MenuView(showMenu: $showMenu, coordinator: coordinator)
+        }
+        .sheet(isPresented: $coordinator.isShowingMailView) {
+            if MFMailComposeViewController.canSendMail() {
+                MailView(result: $viewModel.mailResult)
+            } else {
+                Text("Can't send emails from this device")
+            }
         }
     }
 }

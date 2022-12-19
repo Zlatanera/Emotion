@@ -9,6 +9,8 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     @Published var currentScene: AnyView = AnyView(EmptyView())
     @Published var items: [Notes] = []
     
+    @Published var isShowingMailView = false
+    
     //Published для списка
     
     internal var data: DataManager = DataManager.shared
@@ -89,6 +91,10 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     
     func showHints() {
         navScene.push(.hints(count: items.count))
+    }
+    
+    func showMail() {
+        isShowingMailView = true
     }
     
     func changeTask(pair: Emotion.NotesIndex) {

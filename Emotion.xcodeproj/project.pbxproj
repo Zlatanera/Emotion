@@ -16,6 +16,7 @@
 		496091A7293F7F7E00B104ED /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496091A6293F7F7E00B104ED /* SettingModel.swift */; };
 		496091AA2940B22500B104ED /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 496091A92940B22500B104ED /* SwiftUICharts */; };
 		496091AC29421F1000B104ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496091AB29421F1000B104ED /* AppDelegate.swift */; };
+		496091B02950807E00B104ED /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496091AF2950807D00B104ED /* MailView.swift */; };
 		498A240F277307EA000ACD36 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A240E277307EA000ACD36 /* AddTaskViewModel.swift */; };
 		498A2411277307FC000ACD36 /* AddTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2410277307FC000ACD36 /* AddTaskModel.swift */; };
 		498A241427730D07000ACD36 /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */; };
@@ -67,6 +68,7 @@
 		496091A4293F7F7500B104ED /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		496091A6293F7F7E00B104ED /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		496091AB29421F1000B104ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		496091AF2950807D00B104ED /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		498A240E277307EA000ACD36 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		498A2410277307FC000ACD36 /* AddTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskModel.swift; sourceTree = "<group>"; };
 		498A241227730D07000ACD36 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -142,6 +144,21 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		496091AD29507EF900B104ED /* Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		496091AE2950805C00B104ED /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				496091AF2950807D00B104ED /* MailView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		49C57FCC27670FAE00988712 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +184,7 @@
 		49C57FD0276729D600988712 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				496091AD29507EF900B104ED /* Support */,
 				4960919D293F7E0E00B104ED /* Settings */,
 				49E9CDE1290FBBE700D6081A /* Stats */,
 				496091962936106600B104ED /* Hints */,
@@ -264,6 +282,7 @@
 		CE5069CE27478AB6006457CB /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				496091AE2950805C00B104ED /* CustomViews */,
 				49E9CDDB28F6F0F000D6081A /* Constants */,
 				49C57FCC27670FAE00988712 /* Data */,
 				49E9CDD828F6EBB400D6081A /* Extensions */,
@@ -423,6 +442,7 @@
 				495E527927620406003A5F12 /* DataManager.swift in Sources */,
 				498A241427730D07000ACD36 /* Notes+CoreDataClass.swift in Sources */,
 				CE5069E927478ED7006457CB /* Bindable.swift in Sources */,
+				496091B02950807E00B104ED /* MailView.swift in Sources */,
 				CE5069EB27478F1D006457CB /* MainView.swift in Sources */,
 				49A940F4276B0AC700BB4750 /* OnBoardingCardData.swift in Sources */,
 				496091A3293F7F3C00B104ED /* SettingView.swift in Sources */,
