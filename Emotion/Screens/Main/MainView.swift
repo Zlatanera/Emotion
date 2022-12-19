@@ -42,7 +42,7 @@ struct MainView: View {
                         }
                     }) {
                         AppImages.MenuImage()
-                            .frame(width: 20, height: 20, alignment: .center)
+                            .frame(width: 30, height: 30, alignment: .center)
                     }
                 .padding(.top , 10)
                 .padding(.leading, 15),
