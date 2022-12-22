@@ -36,6 +36,16 @@ enum Emotion {
             }
         }
         
+        var color: Color {
+            switch self {
+            case .verySad: return AppColors.verySad
+            case .sad: return AppColors.sad
+            case .normal: return AppColors.normal
+            case .happy: return AppColors.happy
+            case .veryHappy: return AppColors.veryHappy
+            }
+        }
+        
         static var smiles: [Smile] {
             Smile.allCases.sorted(by: { $0.id < $1.id })
         }
