@@ -11,9 +11,9 @@ struct AddTaskView: View {
     
     @EnvironmentObject var coordinator: EmotionCoordinator
     @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var viewModel = AddTaskViewModel()
     
     @State private var nameTask: String = ""
-    @State private var chooseEmotion: Emotion.Smile = .normal
     
     var body: some View {
         VStack {
@@ -55,30 +55,28 @@ struct AddTaskView: View {
                 .fontWeight(.semibold)
                 .padding(.top, 20)
             
-            HStack(alignment: .center, spacing: 20) {
+            HStack(alignment: .center) {
                 ForEach(Emotion.Smile.smiles, id: \.self) { smile in
+                    let isActive = viewModel.currentEmotion == smile
+                    
                     Button {
-                        chooseEmotion = smile
+                        viewModel.set(emotion: smile)
                     } label: {
                         Image(smile.image)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 40, height: 40)
-                        }
+                            .background(Color.white.cornerRadius(20))
+                            .padding(5)
+                            .background(isActive ? AnyView(Color.gray.opacity(0.5).cornerRadius(25)) : AnyView(Color.clear))
                     }
                 }
+            }
             .padding()
-            
-//            //MARK: CHOOSE DATE
-//            Text("Укажите дату:")
-//                .font(.title2)
-//                .fontWeight(.semibold)
-//                .foregroundColor(Color("mainColor"))
-//                .padding(.top, 20)
             
             //MARK: SAVE BUTTON
             Button {
-                coordinator.saveTaskToDB(description: nameTask, emotion: chooseEmotion)
+                coordinator.saveTaskToDB(description: nameTask, emotion: viewModel.currentEmotion)
                 coordinator.back()
             } label: {
                 Text("Сохранить")

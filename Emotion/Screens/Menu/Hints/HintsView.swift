@@ -13,7 +13,7 @@ struct HintsView: View {
     @EnvironmentObject var coordinator: EmotionCoordinator
     @ObservedObject var viewModel = HintsViewModel()
     
-    let count: Int
+    let notes: [Notes]
     
     var body: some View {
         VStack {
@@ -90,13 +90,13 @@ struct HintsView: View {
             Spacer()
         }
         .onAppear {
-            viewModel.updateTaskCount(taskCount: count)
+            viewModel.updateCountEmotion(notes: notes)
         }
     }
 }
 
 struct HintsView_Previews: PreviewProvider {
     static var previews: some View {
-        HintsView(count: 1)
+        HintsView(notes: [])
     }
 }

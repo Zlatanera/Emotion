@@ -46,11 +46,11 @@ struct MenuView: View {
                     .padding(.leading) //trailing
                     .padding(.top, 5)
                     
-                    Text("О нас")
+                    Text("О проекте")
                         .frame(width: 150, height: 30, alignment: .center)
                         .foregroundColor(AppColors.mainColor)
                     
-                    Text("Hello")
+                    Text("Это приложение родом из Сибири, где люди не так часто выражать свои эмоции, но от этого они не становятся хуже. Данный проект реализован, чтобы помочь людям, следить за своим состоянием, а также поддерживать их в трудную минуту")
                         .multilineTextAlignment(.center)
                 }//:VSTACK
             }//:SCROLL
