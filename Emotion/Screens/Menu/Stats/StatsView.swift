@@ -40,12 +40,40 @@ struct StatsView: View {
                 .padding()
                 .background(AppColors.mainColor)
                 
+                Text("Линейная диаграмма")
+                    .fontWeight(.semibold)
+                    .foregroundColor(AppColors.mainColor)
+                
                 if let data = viewModel.lineData {
                     StatsLineChart(data: data)
                 }
                 
+                Text("Круговая диаграмма")
+                    .fontWeight(.semibold)
+                    .foregroundColor(AppColors.mainColor)
+                
                 if let data = viewModel.pieData {
                     StatsPieChart(data: data)
+                }
+                
+                Text("Соотношение цвета и эмоций")
+                    .fontWeight(.semibold)
+                    .foregroundColor(AppColors.mainColor)
+                
+                VStack(alignment: .center) {
+                    HStack {
+                        Circle()
+                            .foregroundColor(AppColors.verySad)
+                        
+                        Text("Очень грустно")
+                            .foregroundColor(AppColors.mainColor)
+                            .padding(10)
+                        
+                        AppImages.emotionImageVerySad()
+                            
+                    }
+                    .scaledToFit()
+                    .frame(height: 100)
                 }
                     
             }//:VSTACK

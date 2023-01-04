@@ -54,7 +54,7 @@ struct HintsView: View {
                     HStack {
                         AppImages.instruction2()
                         
-                        Text("Постарайтесь фиксировать те моменты, которые вызывают у вас определенные эмоции и пишите кратку заметку, которую можно будет посмотреть спустя время")
+                        Text("Если вы понимаете, что ваше настроение изменилось после создания определенной заметки, актуализируйте информацию, чтобы не запутаться в будущем")
                             .italic()
                             .multilineTextAlignment(.center)
                             .foregroundColor(AppColors.mainColor)
@@ -64,7 +64,7 @@ struct HintsView: View {
                     HStack {
                         AppImages.instruction3()
                         
-                        Text("Постарайтесь фиксировать те моменты, которые вызывают у вас определенные эмоции и пишите кратку заметку, которую можно будет посмотреть спустя время")
+                        Text("Старайтесь писать кратко, так вы сможете быстро понять, что вы имели в виду")
                             .italic()
                             .multilineTextAlignment(.center)
                             .foregroundColor(AppColors.mainColor)

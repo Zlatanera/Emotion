@@ -41,7 +41,7 @@ class HintsViewModel: ObservableObject {
     
     func notification2(count: Int) {
         let content = UNMutableNotificationContent()
-        content.title = "Congratulations!"
+        content.title = "Тебе многое нравится!"
         content.subtitle = "Ты набрал \(count)!"
         content.sound = UNNotificationSound.default
 
