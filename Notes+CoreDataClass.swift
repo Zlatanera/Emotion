@@ -2,7 +2,7 @@
 //  Notes+CoreDataClass.swift
 //  Emotion
 //
-//  Created by Владислав Бороздин on 22.12.2021.
+//  Created by Владислав Бороздин on 12.01.2023.
 //
 //
 
@@ -12,7 +12,7 @@ import SwiftUICharts
 
 @objc(Notes)
 public class Notes: NSManagedObject {
-    
+
     var dayS: String {
         if let date = timestamp {
             return dayFormatter.string(from: date)
@@ -56,6 +56,7 @@ public class Notes: NSManagedObject {
         formatter.dateFormat = "MMM"
         return formatter
     }()
+    
 }
 
 extension Notes {
@@ -65,3 +66,4 @@ extension Notes {
     }
     
 }
+

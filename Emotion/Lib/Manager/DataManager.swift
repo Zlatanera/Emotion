@@ -21,6 +21,28 @@ class DataManager {
         
     }
     
+    func getCategories(completion: ([Categories]) -> Void) {
+        guard let items = try? persistenceController.container.viewContext.fetch(Categories.fetchRequest()) else
+        { completion([]); return }
+        print(items.count)
+        completion(items)
+        
+    }
+
+    func addCategory(for title: String, completion: (Categories?) -> Void) {
+        let newItem = Categories(context: persistenceController.container.viewContext)
+            newItem.setData(for: title)
+
+            do {
+                try persistenceController.container.viewContext.save()
+                completion(newItem)
+            } catch {
+                completion(nil)
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
     func addTask(for model: AddTask.forDB, completion: (Notes?) -> Void) {
         let newItem = Notes(context: persistenceController.container.viewContext)
             newItem.setData(for: model)

@@ -2,7 +2,7 @@
 //  Notes+CoreDataProperties.swift
 //  Emotion
 //
-//  Created by Владислав Бороздин on 22.12.2021.
+//  Created by Владислав Бороздин on 12.01.2023.
 //
 //
 
@@ -20,6 +20,7 @@ extension Notes {
     @NSManaged public var id: UUID?
     @NSManaged public var task: String?
     @NSManaged public var timestamp: Date?
+    @NSManaged public var category: Categories?
 
 }
 
@@ -33,6 +34,4 @@ extension Notes {
         self.task = model.description
         self.timestamp = model.timestamp
     }
-    
-    
 }

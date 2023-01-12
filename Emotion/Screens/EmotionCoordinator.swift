@@ -8,6 +8,7 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     
     @Published var currentScene: AnyView = AnyView(EmptyView())
     @Published var items: [Notes] = []
+    @Published var categories: [Categories] = []
     
     @Published var isShowingMailView = false
     
@@ -23,6 +24,7 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
         setupCoordinator()
         setupBindings()
         setupItems()
+        setupCategories()
         self.start()
     }
     
@@ -37,6 +39,12 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     func setupItems() {
         data.getNotes { items in
             self.items = items
+        }
+    }
+    
+    func setupCategories() {
+        data.getCategories { categories in
+            self.categories = categories
         }
     }
     
@@ -56,6 +64,7 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
         case .onBoarding: currentScene = AnyView(OnBoardingView().environmentObject(self))
         case .startScreen: currentScene = AnyView(StartView(endAnimation: true).environmentObject(self))
         case .stats(let items): currentScene = AnyView(StatsView(items: items).environmentObject(self))
+        case .categories(let items): currentScene = AnyView(CategoriesView(items: items).environmentObject(self))
         case .hints: currentScene = AnyView(HintsView(notes: items).environmentObject(self))
         case .changeTask(let pair): currentScene = AnyView(ChangeTaskView(changePair: pair).environmentObject(self))
         }
@@ -95,6 +104,10 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
     
     func showMail() {
         isShowingMailView = true
+    }
+    
+    func showCategories() {
+        navScene.push(.categories(items: categories))
     }
     
     func changeTask(pair: Emotion.NotesIndex) {
@@ -142,6 +155,13 @@ extension EmotionCoordinator {
                 self.items[pair.0] = item
             }
         })
+    }
+    
+    func addCategory(_ title: String) {
+        data.addCategory(for: title) { category in
+            guard let category = category else { return }
+            self.categories.append(category)
+        }
     }
 }
 

@@ -13,6 +13,7 @@ enum Emotion {
         case stats(items: [Notes])
         case hints
         case changeTask(pair: NotesIndex)
+        case categories(items: [Categories])
     }
     
     enum Smile: Int, CaseIterable {

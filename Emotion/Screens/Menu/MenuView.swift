@@ -40,7 +40,7 @@ struct MenuView: View {
                         TabButton(title: "Статистика", image: "Statistics", action: { coordinator?.showStats() } )
                         TabButton(title: "Подсказки", image: "Hints", action: { coordinator?.showHints() })
                         TabButton(title: "Поддержка", image: "Support", action: { coordinator?.showMail() })
-                        TabButton(title: "Настройки", image: "Review", action: {  })
+                        TabButton(title: "Категории", image: "Review", action: { coordinator?.showCategories() })
                     }//:VSTACK
                     .padding(10)
                     .padding(.leading) //trailing
