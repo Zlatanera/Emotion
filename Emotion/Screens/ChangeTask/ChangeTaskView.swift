@@ -77,9 +77,28 @@ struct ChangeTaskView: View {
                 }
             .padding()
             
+            ScrollView(.vertical) {
+                VStack {
+                    ForEach(coordinator.categories) { category in
+                        let isActive = viewModel.category == category
+                        Button {
+                            viewModel.category = category
+                        } label: {
+                            Text(category.title!)
+                                .font(.system(size: 24, weight: .semibold, design: .default))
+                                .padding()
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .background(isActive ? AnyView(AppColors.mainColor) : AnyView(Color.clear))
+                                .cornerRadius(15)
+                                .foregroundColor(.black)
+                        }
+                    }
+                }
+            }
+            
             //MARK: SAVE BUTTON
             Button {
-                coordinator.updateTaskInDB(description: nameTask, emotion: viewModel.currentEmotion, pair: changePair)
+                coordinator.updateTaskInDB(description: nameTask, category: viewModel.category, emotion: viewModel.currentEmotion, pair: changePair)
                 coordinator.back()
             } label: {
                 Text("Сохранить")

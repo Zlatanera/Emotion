@@ -12,5 +12,6 @@ enum AddTask {
         let emotion: Emotion.Smile
         let description: String
         let timestamp = Date.now
+        let category: Categories?
     }
 }

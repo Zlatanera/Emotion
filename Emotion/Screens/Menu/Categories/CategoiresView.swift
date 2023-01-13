@@ -14,12 +14,32 @@ struct CategoriesView: View {
     
     @State private var text: String = ""
     
-    let items: [Categories]
-    
     var body: some View {
         
         VStack{
-            TextField("", text: $text)
+            VStack(alignment: .center, spacing: 20) {
+                //MARK: HEADER
+                HStack {
+                    
+                    Text("Категория")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                    
+                    Spacer()
+                    
+                    Button(action: coordinator.back) {
+                        Image(systemName: "xmark.circle")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                    }
+                }//:HSTACK
+                .foregroundColor(.white)
+                
+            }//:VSTACK
+            .padding()
+            .background(AppColors.mainColor)
+            
+            TextField("", text: $text, prompt: Text("Введите категорию"))
                 .onSubmit {
                     coordinator.addCategory(text)
                 }
@@ -33,9 +53,6 @@ struct CategoriesView: View {
                     }
                 }
             }
-        }
-        .onAppear {
-            viewModel.load(items)
         }
     }
 }

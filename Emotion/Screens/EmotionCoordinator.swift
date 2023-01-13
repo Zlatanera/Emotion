@@ -64,7 +64,7 @@ class EmotionCoordinator: ObservableObject, CoordinatorSwiftUI {
         case .onBoarding: currentScene = AnyView(OnBoardingView().environmentObject(self))
         case .startScreen: currentScene = AnyView(StartView(endAnimation: true).environmentObject(self))
         case .stats(let items): currentScene = AnyView(StatsView(items: items).environmentObject(self))
-        case .categories(let items): currentScene = AnyView(CategoriesView(items: items).environmentObject(self))
+        case .categories: currentScene = AnyView(CategoriesView().environmentObject(self))
         case .hints: currentScene = AnyView(HintsView(notes: items).environmentObject(self))
         case .changeTask(let pair): currentScene = AnyView(ChangeTaskView(changePair: pair).environmentObject(self))
         }
@@ -139,8 +139,8 @@ extension EmotionCoordinator {
         }
     }
     
-    func saveTaskToDB(description: String, emotion: Emotion.Smile) {
-        data.addTask(for: AddTask.forDB(emotion: emotion, description: description), completion: {
+    func saveTaskToDB(description: String, category: Categories?, emotion: Emotion.Smile) {
+        data.addTask(for: AddTask.forDB(emotion: emotion, description: description, category: category), completion: {
             guard let item = $0 else { return }
             DispatchQueue.main.async {
                 self.items.append(item)
@@ -148,8 +148,8 @@ extension EmotionCoordinator {
         })
     }
     
-    func updateTaskInDB(description: String, emotion: Emotion.Smile, pair: Emotion.NotesIndex) {
-        data.updateTask(for: AddTask.forDB(emotion: emotion, description: description), item: pair.1, completion: {
+    func updateTaskInDB(description: String, category: Categories?, emotion: Emotion.Smile, pair: Emotion.NotesIndex) {
+        data.updateTask(for: AddTask.forDB(emotion: emotion, description: description, category: category), item: pair.1, completion: {
             guard let item = $0 else { return }
             DispatchQueue.main.async {
                 self.items[pair.0] = item

@@ -33,5 +33,6 @@ extension Notes {
         self.emotion = Int16(model.emotion.id)
         self.task = model.description
         self.timestamp = model.timestamp
+        self.category = model.category
     }
 }

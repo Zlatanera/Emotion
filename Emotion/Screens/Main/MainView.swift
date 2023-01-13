@@ -143,6 +143,14 @@ struct RowItem: View {
                 .multilineTextAlignment(.leading)
                 .lineLimit(4)
                 .padding(.leading, 2)
+            
+            Text(item.category?.title ?? "")
+                .font(.footnote)
+                .fontWeight(.light)
+                .foregroundColor(.white)
+                .multilineTextAlignment(.leading)
+                .lineLimit(4)
+                .padding(.leading, 2)
 
             Spacer()
             

@@ -74,9 +74,34 @@ struct AddTaskView: View {
             }
             .padding()
             
+            Text("Определите категорию")
+                .foregroundColor(AppColors.mainColor)
+                .font(.title2)
+                .fontWeight(.semibold)
+                .padding(.top, 20)
+            
+            ScrollView(.vertical) {
+                VStack {
+                    ForEach(coordinator.categories) { category in
+                        let isActive = viewModel.category == category
+                        Button {
+                            viewModel.category = category
+                        } label: {
+                            Text(category.title!)
+                                .font(.system(size: 24, weight: .semibold, design: .default))
+                                .padding()
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .background(isActive ? AnyView(AppColors.mainColor) : AnyView(Color.clear))
+                                .cornerRadius(15)
+                                .foregroundColor(.black)
+                        }
+                    }
+                }
+            }
+            
             //MARK: SAVE BUTTON
             Button {
-                coordinator.saveTaskToDB(description: nameTask, emotion: viewModel.currentEmotion)
+                coordinator.saveTaskToDB(description: nameTask, category: viewModel.category, emotion: viewModel.currentEmotion)
                 coordinator.back()
             } label: {
                 Text("Сохранить")
@@ -87,10 +112,9 @@ struct AddTaskView: View {
                     .cornerRadius(15)
                     .foregroundColor(.white)
             }
-            .padding(.top, 20)
+            .padding(.bottom, 20)
             .padding(.horizontal, 40)
             
-            Spacer()
         }//:VSTACK
     }
 }
